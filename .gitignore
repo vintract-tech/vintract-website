@@ -1,0 +1,20 @@
+# Terraform local state — we use remote S3 state, so any local .tfstate
+# is a residue from a misconfigured init. Don't commit it.
+**/.terraform/
+**/*.tfstate
+**/*.tfstate.*
+# .terraform.lock.hcl IS committed — it pins provider versions across
+# machines. Only the .terraform/ download cache is ignored above.
+
+# Editor / OS noise
+.DS_Store
+.vscode/
+.idea/
+*.swp
+
+# Local env overrides
+.env
+.env.local
+
+# Terraform apply transcripts saved by the deploy flow
+**/apply.log
