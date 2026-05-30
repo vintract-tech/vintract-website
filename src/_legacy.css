@@ -1,0 +1,291 @@
+/* ============ animated background grid (fixed, behind everything) ============ */
+.bg-grid {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+.bg-grid::before {
+  content: "";
+  position: absolute;
+  inset: -20%;
+  background:
+    radial-gradient(circle at 20% 10%, rgba(139, 92, 246, 0.18), transparent 60%),
+    radial-gradient(circle at 80% 20%, rgba(16, 185, 129, 0.12), transparent 55%),
+    radial-gradient(circle at 50% 90%, rgba(124, 58, 237, 0.18), transparent 55%);
+  filter: blur(20px);
+  will-change: transform;
+}
+.bg-grid__layer {
+  position: absolute;
+  inset: 0;
+  opacity: 0.5;
+}
+.bg-grid__layer--lines {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: radial-gradient(ellipse at center, black 40%, transparent 80%);
+  -webkit-mask-image: radial-gradient(ellipse at center, black 40%, transparent 80%);
+}
+.bg-grid__layer--dots {
+  background-image: radial-gradient(rgba(167, 139, 250, 0.25) 1px, transparent 1.5px);
+  background-size: 32px 32px;
+  opacity: 0.35;
+  mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+  -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+}
+/* moving scan line that slides down the page on scroll */
+.bg-grid__scan {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 200px;
+  top: -200px;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(139, 92, 246, 0.08) 40%,
+    rgba(52, 211, 153, 0.12) 50%,
+    rgba(139, 92, 246, 0.08) 60%,
+    transparent
+  );
+  filter: blur(1px);
+}
+
+/* All page content sits on top */
+body > header,
+body > section,
+body > footer {
+  position: relative;
+  z-index: 1;
+}
+
+/* ============ platform section scan line ============ */
+.platform-bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: linear-gradient(
+    90deg,
+    transparent,
+    transparent 49.6%,
+    rgba(139, 92, 246, 0.1) 50%,
+    transparent 50.4%,
+    transparent
+  );
+  background-size: 200% 100%;
+  animation: scanX 12s linear infinite;
+  opacity: 0.7;
+}
+@keyframes scanX {
+  0%   { background-position:   0% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* ============ cards ============ */
+.card {
+  position: relative;
+  padding: 28px;
+  border-radius: 18px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01));
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(6px);
+  transition: border-color 0.3s ease, transform 0.4s ease, box-shadow 0.4s ease;
+}
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.4), rgba(16, 185, 129, 0.0) 60%);
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+.card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 255, 255, 0.18);
+  box-shadow: 0 30px 60px -20px rgba(124, 58, 237, 0.2);
+}
+.card:hover::before {
+  opacity: 1;
+}
+.card__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  margin-bottom: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+.card__title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 10px;
+  letter-spacing: -0.02em;
+}
+.card__body {
+  font-size: 0.95rem;
+  color: rgb(161, 161, 170);
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+.card__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 6px;
+}
+.card__list li {
+  position: relative;
+  padding-left: 18px;
+  font-size: 0.85rem;
+  color: rgb(212, 212, 216);
+}
+.card__list li::before {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 8px;
+  width: 5px;
+  height: 5px;
+  border-radius: 9999px;
+  background: linear-gradient(135deg, #a78bfa, #34d399);
+}
+
+/* ============ AI tiles ============ */
+.ai-tile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 18px;
+  border-radius: 14px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.015));
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: rgb(228, 228, 231);
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: transform 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+}
+.ai-tile:hover {
+  transform: translateY(-3px);
+  border-color: rgba(139, 92, 246, 0.5);
+  background: linear-gradient(180deg, rgba(139, 92, 246, 0.1), rgba(255, 255, 255, 0.02));
+}
+.ai-tile svg {
+  color: rgb(167, 139, 250);
+  flex-shrink: 0;
+}
+
+/* ============ contact card ============ */
+.contact-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 18px;
+  border-radius: 14px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.015));
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+.contact-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* ============ reveal-on-scroll initial state (GSAP overrides on enter) ============ */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  will-change: opacity, transform;
+}
+
+/* ============ platform connector SVG ============ */
+.platform-cards-wrapper {
+  position: relative;
+}
+.platform-connector {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+.platform-connector__path {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  filter: drop-shadow(0 0 6px rgba(167, 139, 250, 0.6));
+}
+.platform-connector__dot {
+  opacity: 0;
+  filter: drop-shadow(0 0 4px rgba(52, 211, 153, 0.8));
+}
+
+/* ============ AI terminal ============ */
+.ai-terminal {
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(7, 9, 18, 0.85);
+  overflow: hidden;
+  backdrop-filter: blur(8px);
+}
+.ai-terminal__bar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 14px;
+  background: rgba(255, 255, 255, 0.03);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+.ai-terminal__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+.ai-terminal__dot--red { background: #ef4444; }
+.ai-terminal__dot--yellow { background: #eab308; }
+.ai-terminal__dot--green { background: #22c55e; }
+.ai-terminal__title {
+  margin-left: 8px;
+  font-size: 0.7rem;
+  color: rgb(113, 113, 122);
+  font-family: 'JetBrains Mono', monospace;
+}
+.ai-terminal__body {
+  padding: 16px 18px;
+  min-height: 90px;
+}
+.ai-terminal__cursor {
+  animation: blink 1s step-end infinite;
+  color: #34d399;
+}
+@keyframes blink {
+  50% { opacity: 0; }
+}
+.ai-terminal__response {
+  line-height: 1.7;
+  color: rgb(212, 212, 216);
+}
+
+/* utility: smooth scroll for anchor links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ============ ensure background scan visible on top of grid ============ */
+.bg-grid > * { mix-blend-mode: screen; }
+.bg-grid__layer { mix-blend-mode: normal; }

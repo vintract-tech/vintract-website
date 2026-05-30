@@ -3,50 +3,84 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vintract — Industry 4.0 for the Indian factory</title>
-  <meta name="description" content="Live material tracking, BOM-driven production planning, and AI built into every line of code. Industry 4.0 SaaS for Indian manufacturers." />
+  <title>Vintract — Industry 4.0 SaaS for the Indian factory</title>
+  <meta name="description" content="Vintract is an Industry 4.0 SaaS platform for Indian manufacturers — live material tracking via per-station Raspberry Pis, BOM-driven production planning, vendor + waste analytics, and an AI-native mobile + web app. Used in production at Motley Cookers, Hosur." />
   <meta name="theme-color" content="#0b0f1a" />
+  <link rel="canonical" href="https://vintract.com/" />
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Vintract — Industry 4.0 for the Indian factory" />
-  <meta property="og:description" content="Where the shop floor becomes a real-time, intelligent system. Live tracking, planning, HR/ERP, automation — AI-native." />
+  <!-- Open Graph + Twitter -->
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://vintract.com" />
+  <meta property="og:site_name" content="Vintract" />
+  <meta property="og:title" content="Vintract — Industry 4.0 SaaS for the Indian factory" />
+  <meta property="og:description" content="Live material tracking, BOM-driven planning, IoT and an AI-native app. Built for Indian SMB manufacturers. Live at Motley Cookers, Hosur." />
+  <meta property="og:url" content="https://vintract.com/" />
+  <meta property="og:image" content="https://vintract.com/assets/og.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Vintract — Industry 4.0 SaaS for the Indian factory" />
+  <meta name="twitter:description" content="Live material tracking, BOM-driven planning, IoT, AI-native. Live at Motley Cookers, Hosur." />
+  <meta name="twitter:image" content="https://vintract.com/assets/og.png" />
 
-  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <!-- Favicon set -->
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+  <link rel="apple-touch-icon" href="/assets/favicon.svg" />
 
-  <!-- Tailwind from CDN — fine for a marketing page; we never minify-and-tree-shake. -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            ink: { 950: '#070912', 900: '#0b0f1a', 800: '#101524', 700: '#172033' },
-            brand: { 400: '#a78bfa', 500: '#8b5cf6', 600: '#7c3aed', 700: '#6d28d9' },
-            accent: { 400: '#34d399', 500: '#10b981' },
-          },
-          fontFamily: {
-            sans: ['Inter', 'system-ui', 'sans-serif'],
-            mono: ['JetBrains Mono', 'ui-monospace', 'monospace'],
-          },
-        },
-      },
-    };
-  </script>
-
-  <!-- Google Fonts: Inter + JetBrains Mono -->
+  <!-- Fonts — preconnect for the LCP -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
 
-  <!-- GSAP + ScrollTrigger -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <!-- Compiled Tailwind. Lean static CSS, no CDN runtime. -->
+  <link rel="stylesheet" href="/css/main.css" />
 
-  <link rel="stylesheet" href="css/main.css" />
+  <!-- GSAP for scroll animations. Async / defer to keep LCP clean. -->
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/MotionPathPlugin.min.js"></script>
+  <script defer src="/js/main.js"></script>
+
+  <!-- Plausible — privacy-friendly, cookieless, GDPR/DPDP compliant. -->
+  <script defer data-domain="vintract.com" src="https://plausible.io/js/script.js"></script>
+
+  <!-- Structured data — helps Google understand who we are. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "name": "Vintract",
+        "url": "https://vintract.com",
+        "logo": "https://vintract.com/assets/favicon.svg",
+        "description": "Industry 4.0 SaaS platform for Indian manufacturers — live material tracking, BOM-driven production planning, vendor + waste analytics, AI-native.",
+        "founders": [{ "@type": "Person", "name": "Harikrishna Reddy" }],
+        "foundingDate": "2026",
+        "areaServed": "IN",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "email": "hello@vintract.com",
+          "contactType": "sales",
+          "areaServed": "IN",
+          "availableLanguage": ["English", "Hindi"]
+        }
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "Vintract Platform",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web, Android",
+        "offers": { "@type": "Offer", "priceCurrency": "INR", "price": "0", "description": "Contact sales for pricing" },
+        "description": "Live shop-floor inventory, BOM-driven MRP, IoT scanning via Raspberry Pi, mobile + web apps."
+      }
+    ]
+  }
+  </script>
 </head>
 <body class="bg-ink-950 text-zinc-100 font-sans antialiased overflow-x-hidden">
+
+  <!-- Skip-to-content for keyboard / screen-reader users -->
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:rounded-md focus:bg-brand-600 focus:px-3 focus:py-2 focus:text-sm focus:font-semibold focus:text-white">Skip to content</a>
 
   <!-- Animated background grid — fixed, sits behind everything -->
   <div class="bg-grid" aria-hidden="true">
@@ -58,24 +92,27 @@
   <!-- Top nav -->
   <header class="fixed top-0 left-0 right-0 z-40 backdrop-blur-md bg-ink-950/40 border-b border-white/5">
     <div class="mx-auto max-w-7xl px-6 h-14 flex items-center justify-between">
-      <a href="#top" class="flex items-center gap-2 group">
+      <a href="#top" class="flex items-center gap-2 group" aria-label="Vintract home">
         <span class="w-7 h-7 rounded-lg bg-gradient-to-br from-brand-500 to-accent-500 shadow-lg shadow-brand-700/30 flex items-center justify-center">
-          <svg viewBox="0 0 24 24" fill="none" class="w-4 h-4 text-white" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l3-9 4 18 3-9h4"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" class="w-4 h-4 text-white" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h4l3-9 4 18 3-9h4"/></svg>
         </span>
         <span class="font-bold tracking-tight text-white">vintract</span>
       </a>
-      <nav class="hidden md:flex items-center gap-7 text-sm text-zinc-300">
+      <nav class="hidden md:flex items-center gap-7 text-sm text-zinc-300" aria-label="Primary">
         <a href="#platform" class="hover:text-white transition">Platform</a>
+        <a href="#mobile" class="hover:text-white transition">Mobile</a>
         <a href="#ai" class="hover:text-white transition">AI</a>
-        <a href="#mission" class="hover:text-white transition">Mission</a>
+        <a href="#customers" class="hover:text-white transition">Customers</a>
         <a href="#contact" class="hover:text-white transition">Contact</a>
       </nav>
       <a href="#contact" class="inline-flex items-center gap-2 rounded-md bg-brand-600 hover:bg-brand-700 px-3 py-1.5 text-sm font-semibold text-white shadow-lg shadow-brand-700/30 transition">
         Book a demo
-        <svg viewBox="0 0 24 24" fill="none" class="w-3.5 h-3.5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" class="w-3.5 h-3.5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
       </a>
     </div>
   </header>
+
+  <main id="main">
 
   <!-- ============ HERO ============ -->
   <section id="top" class="relative min-h-[100svh] flex items-center pt-20">
@@ -83,51 +120,51 @@
       <div class="max-w-3xl">
         <div class="hero-eyebrow inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-zinc-300 mb-6 backdrop-blur">
           <span class="w-1.5 h-1.5 rounded-full bg-accent-400 animate-pulse"></span>
-          Industry 4.0 SaaS, built in India
+          Live in production · Motley Cookers, Hosur
         </div>
         <h1 class="hero-title text-5xl md:text-7xl font-black tracking-tight leading-[1.05] text-white mb-6">
-          Where the Indian factory<br />
-          meets <span class="bg-gradient-to-r from-brand-400 via-brand-500 to-accent-400 bg-clip-text text-transparent">Industry 4.0</span>.
+          Industry 4.0 SaaS<br />
+          for the <span class="bg-gradient-to-r from-brand-400 via-brand-500 to-accent-400 bg-clip-text text-transparent">Indian factory</span>.
         </h1>
         <p class="hero-sub max-w-2xl text-lg md:text-xl text-zinc-300 mb-10 leading-relaxed">
-          Live material tracking, BOM-driven production planning, HR &amp; ERP, factory automation —
-          and <span class="font-semibold text-white">AI built into every line of code</span>.
-          A single platform that turns the shop floor into a real-time, intelligent system.
+          One platform that runs the floor and the back office.
+          Per-station Raspberry Pis scan every movement; the cloud reconciles
+          BOM, vendor lead times and waste in real time; operators close production
+          orders from an Android app. <span class="font-semibold text-white">Live at Motley Cookers, Hosur — onboarding 4 more in 2026.</span>
         </p>
         <div class="hero-cta flex flex-wrap items-center gap-3">
           <a href="#contact" class="inline-flex items-center gap-2 rounded-md bg-gradient-to-r from-brand-600 to-brand-500 hover:from-brand-700 hover:to-brand-600 px-5 py-3 text-sm font-bold text-white shadow-xl shadow-brand-700/40 transition">
-            See a live demo
-            <svg viewBox="0 0 24 24" fill="none" class="w-4 h-4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            Book a 30-min demo
+            <svg viewBox="0 0 24 24" fill="none" class="w-4 h-4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
           </a>
           <a href="#platform" class="inline-flex items-center gap-2 rounded-md border border-white/15 hover:border-white/30 bg-white/5 hover:bg-white/10 px-5 py-3 text-sm font-semibold text-zinc-100 transition">
-            What we build
+            Explore the platform
           </a>
         </div>
 
-        <!-- live stat strip -->
+        <!-- proof strip — real numbers, not vanity -->
         <div class="hero-stats mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl">
           <div>
-            <div class="text-2xl md:text-3xl font-bold text-white tabular-nums" data-counter="100">0</div>
-            <div class="text-xs uppercase tracking-wider text-zinc-400 mt-1">% real-time</div>
+            <div class="text-2xl md:text-3xl font-bold text-white tabular-nums" data-counter="370" data-counter-suffix="+">0</div>
+            <div class="text-xs uppercase tracking-wider text-zinc-400 mt-1">SKUs tracked live</div>
           </div>
           <div>
-            <div class="text-2xl md:text-3xl font-bold text-white tabular-nums" data-counter="24">0</div>
-            <div class="text-xs uppercase tracking-wider text-zinc-400 mt-1">×7 visibility</div>
+            <div class="text-2xl md:text-3xl font-bold text-white tabular-nums" data-counter="6">0</div>
+            <div class="text-xs uppercase tracking-wider text-zinc-400 mt-1">Pi stations on floor</div>
           </div>
           <div>
-            <div class="text-2xl md:text-3xl font-bold text-white tabular-nums" data-counter="1">0</div>
-            <div class="text-xs uppercase tracking-wider text-zinc-400 mt-1">Pi per station</div>
+            <div class="text-2xl md:text-3xl font-bold text-white tabular-nums" data-counter="14" data-counter-suffix=" wks">0</div>
+            <div class="text-xs uppercase tracking-wider text-zinc-400 mt-1">From POC to live</div>
           </div>
           <div>
-            <div class="text-2xl md:text-3xl font-bold text-white tabular-nums" data-counter="0" data-counter-suffix="+ AI built-in">0</div>
-            <div class="text-xs uppercase tracking-wider text-zinc-400 mt-1">Apps without AI</div>
+            <div class="text-2xl md:text-3xl font-bold text-white tabular-nums" data-counter="99" data-counter-suffix="%">0</div>
+            <div class="text-xs uppercase tracking-wider text-zinc-400 mt-1">Backend uptime</div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- scroll indicator -->
-    <div class="hero-scroll absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-zinc-500 text-xs">
+    <div class="hero-scroll absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-zinc-500 text-xs" aria-hidden="true">
       <span>Scroll</span>
       <svg viewBox="0 0 24 24" fill="none" class="w-4 h-4 animate-bounce" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
     </div>
@@ -140,141 +177,226 @@
         <div class="reveal">
           <div class="text-xs uppercase tracking-[0.3em] text-brand-400 mb-4">Mission</div>
           <h2 class="text-3xl md:text-4xl font-bold leading-tight text-white">
-            Make every shop floor in India as intelligent as the products it builds.
+            Bring Industry 4.0 to Indian SMB manufacturers — without an SAP licence.
           </h2>
           <p class="mt-6 text-zinc-400 leading-relaxed text-lg">
-            Indian manufacturing runs on hand-written registers, mental math, and WhatsApp threads.
-            We replace that with a single source of truth — scanned, tracked, and acted on in real time.
+            Indian SMB factories still run on hand-written registers, WhatsApp threads and Tally.
+            Enterprise ERPs assume a CFO and a six-figure implementation budget. Vintract closes
+            that gap: same operational backbone, one-tenth the price, deployed in weeks not years.
           </p>
         </div>
         <div class="reveal">
           <div class="text-xs uppercase tracking-[0.3em] text-accent-400 mb-4">Vision</div>
           <h2 class="text-3xl md:text-4xl font-bold leading-tight text-white">
-            A factory where every component knows itself — and tells you where it's going.
+            Every part on every line, scanned, traced and ledgered in real time.
           </h2>
           <p class="mt-6 text-zinc-400 leading-relaxed text-lg">
-            Barcodes. Sensors. Edge devices. Cloud. Models. The whole chain wired together so the floor
-            tells the office what's about to break before it does.
+            The shop floor becomes a queryable system: every barcode scan, every component
+            substitution, every reject. AI models trained on that ledger surface shortages
+            before they happen and anomalies before they ship.
           </p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ============ PLATFORM (Industry 4.0 stack) ============ -->
+  <!-- ============ PLATFORM ============ -->
   <section id="platform" class="relative py-32 overflow-hidden">
-    <!-- moving scan line in background -->
     <div class="platform-bg" aria-hidden="true"></div>
-
     <div class="mx-auto max-w-7xl px-6 relative">
       <div class="max-w-2xl mb-20 reveal">
         <div class="text-xs uppercase tracking-[0.3em] text-brand-400 mb-4">Platform</div>
         <h2 class="text-4xl md:text-5xl font-bold leading-tight text-white">
-          One platform.<br />The entire shop floor.
+          The full stack.<br />Floor to forecast.
         </h2>
         <p class="mt-6 text-zinc-400 text-lg leading-relaxed">
-          Live material movement. BOM-driven planning. HR &amp; ERP. Floor automation. All wired
-          to the same operational backbone so the data finally reconciles.
+          Edge devices on every station, FastAPI backend, Postgres ledger, Next.js web app,
+          React Native mobile, AWS-native infrastructure. One vendor, one bill, one support
+          line.
         </p>
       </div>
 
-      <div class="grid md:grid-cols-3 gap-6">
-        <!-- Card 1 -->
-        <article class="card reveal group">
-          <div class="card__icon bg-gradient-to-br from-brand-500/20 to-brand-600/0">
-            <svg viewBox="0 0 24 24" fill="none" class="w-6 h-6 text-brand-400" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7v10M7 4v16M11 7v10M15 4v16M19 7v10"/></svg>
-          </div>
-          <h3 class="card__title">Live material tracking</h3>
-          <p class="card__body">
-            Per-station Raspberry Pis scan barcodes on the floor. Stock, traceability, and quality
-            events flow into the same ledger — no batch uploads, no end-of-day sync.
-          </p>
-          <ul class="card__list">
-            <li>Barcode + QR + IoT scans</li>
-            <li>Real-time stock per SKU</li>
-            <li>Full part-to-cooker traceability</li>
-          </ul>
-        </article>
+      <div class="platform-cards-wrapper relative">
+        <svg class="platform-connector hidden md:block" aria-hidden="true" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="connGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#a78bfa" />
+              <stop offset="50%" stop-color="#34d399" />
+              <stop offset="100%" stop-color="#a78bfa" />
+            </linearGradient>
+          </defs>
+          <path class="platform-connector__path" stroke="url(#connGrad)" stroke-width="2" fill="none" />
+          <circle class="platform-connector__dot" r="4" fill="#34d399" />
+        </svg>
 
-        <!-- Card 2 -->
-        <article class="card reveal group">
-          <div class="card__icon bg-gradient-to-br from-accent-500/20 to-accent-500/0">
-            <svg viewBox="0 0 24 24" fill="none" class="w-6 h-6 text-accent-400" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h7v7H3zM14 3h7v7h-7zM14 14h7v7h-7zM3 14h7v7H3z"/></svg>
-          </div>
-          <h3 class="card__title">Production &amp; planning</h3>
-          <p class="card__body">
-            Bills-of-materials, vendor lead times, scrap factors. The platform tells you whether
-            you can make 100 cookers next Friday before you commit to the order.
-          </p>
-          <ul class="card__list">
-            <li>BOM-driven MRP</li>
-            <li>Feasibility &amp; shortage analysis</li>
-            <li>Auto-suggested purchase orders</li>
-          </ul>
-        </article>
+        <div class="grid md:grid-cols-3 gap-6">
+          <article class="card reveal group">
+            <div class="card__icon bg-gradient-to-br from-brand-500/20 to-brand-600/0">
+              <svg viewBox="0 0 24 24" fill="none" class="w-6 h-6 text-brand-400" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7v10M7 4v16M11 7v10M15 4v16M19 7v10"/></svg>
+            </div>
+            <h3 class="card__title">Live material tracking</h3>
+            <p class="card__body">
+              Per-station Raspberry Pis publish barcode scans to AWS IoT Core; a Lambda
+              writes to Postgres in under 500 ms. Stock, traceability and quality events all
+              hit the same ledger — no batch sync, no end-of-day reconciliation.
+            </p>
+            <ul class="card__list">
+              <li>Barcode + QR + IoT scans</li>
+              <li>Real-time on-hand per SKU</li>
+              <li>Full part-to-finished-good lineage</li>
+            </ul>
+          </article>
 
-        <!-- Card 3 -->
-        <article class="card reveal group">
-          <div class="card__icon bg-gradient-to-br from-fuchsia-500/20 to-fuchsia-500/0">
-            <svg viewBox="0 0 24 24" fill="none" class="w-6 h-6 text-fuchsia-400" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a8 8 0 0 1 16 0v1"/></svg>
-          </div>
-          <h3 class="card__title">HR, ERP &amp; automation</h3>
-          <p class="card__body">
-            Attendance, payroll, vendor profiles, low-stock alerts over email, Pi fleet OTA. The
-            back office and the floor finally use the same system.
-          </p>
-          <ul class="card__list">
-            <li>Roles, audit log, alerts</li>
-            <li>Vendor + quality scorecards</li>
-            <li>Pi fleet provisioning via Ansible</li>
-          </ul>
-        </article>
+          <article class="card reveal group">
+            <div class="card__icon bg-gradient-to-br from-accent-500/20 to-accent-500/0">
+              <svg viewBox="0 0 24 24" fill="none" class="w-6 h-6 text-accent-400" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3h7v7H3zM14 3h7v7h-7zM14 14h7v7h-7zM3 14h7v7H3z"/></svg>
+            </div>
+            <h3 class="card__title">BOM-driven production</h3>
+            <p class="card__body">
+              Define products and their bills-of-materials once. Feasibility check explodes
+              the BOM against live stock + vendor lead times before you commit to an order
+              — "100 cookers by Friday: 200 stainless discs short, 21-day lead".
+            </p>
+            <ul class="card__list">
+              <li>Bills of materials with scrap factor</li>
+              <li>Feasibility &amp; shortage analysis</li>
+              <li>Vendor lead-time aware ETA</li>
+            </ul>
+          </article>
+
+          <article class="card reveal group">
+            <div class="card__icon bg-gradient-to-br from-fuchsia-500/20 to-fuchsia-500/0">
+              <svg viewBox="0 0 24 24" fill="none" class="w-6 h-6 text-fuchsia-400" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a8 8 0 0 1 16 0v1"/></svg>
+            </div>
+            <h3 class="card__title">Vendors, waste &amp; reports</h3>
+            <p class="card__body">
+              Vendor profiles with quality scorecards, waste log against specific SKUs and
+              production orders, XLSX-exportable reports with charts. Low-stock email alerts
+              with role-based recipient lists.
+            </p>
+            <ul class="card__list">
+              <li>Roles, audit log, email alerts</li>
+              <li>Vendor quality scorecards</li>
+              <li>Pi fleet provisioning via Ansible</li>
+            </ul>
+          </article>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ============ AI BUILT-IN ============ -->
+  <!-- ============ MOBILE APP ============ -->
+  <section id="mobile" class="relative py-32 bg-ink-900/30 border-y border-white/5">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="grid md:grid-cols-12 gap-12 items-center">
+        <div class="md:col-span-7 reveal">
+          <div class="text-xs uppercase tracking-[0.3em] text-brand-400 mb-4">Mobile</div>
+          <h2 class="text-4xl md:text-5xl font-bold leading-tight text-white">
+            A universal Android app for the operator on the floor.
+          </h2>
+          <p class="mt-6 text-zinc-400 text-lg leading-relaxed">
+            One binary, many factories. The operator types a workspace code at login and the
+            app resolves their company's backend automatically. No app-per-customer rebuild.
+          </p>
+
+          <ul class="mt-8 space-y-3 text-zinc-300">
+            <li class="flex items-start gap-3">
+              <span class="mt-1 w-2 h-2 rounded-full bg-gradient-to-r from-brand-400 to-accent-400 shrink-0"></span>
+              <span>Scan an SKU — see live stock, vendor, threshold, history.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="mt-1 w-2 h-2 rounded-full bg-gradient-to-r from-brand-400 to-accent-400 shrink-0"></span>
+              <span>Receive inward and move stock to floor with scan + qty.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="mt-1 w-2 h-2 rounded-full bg-gradient-to-r from-brand-400 to-accent-400 shrink-0"></span>
+              <span>Production orders: start, save progress, mark complete.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="mt-1 w-2 h-2 rounded-full bg-gradient-to-r from-brand-400 to-accent-400 shrink-0"></span>
+              <span>Waste log with reason picker — automatically decrements stock.</span>
+            </li>
+          </ul>
+
+          <div class="mt-8 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-xs text-zinc-300 backdrop-blur">
+            <span class="w-1.5 h-1.5 rounded-full bg-accent-400 animate-pulse"></span>
+            On the Google Play internal testing track, May 2026
+          </div>
+        </div>
+
+        <div class="md:col-span-5 reveal">
+          <!-- Mock phone frame -->
+          <div class="relative mx-auto max-w-xs">
+            <div class="aspect-[9/19] rounded-[2.5rem] border border-white/10 bg-gradient-to-br from-ink-800 to-ink-950 p-3 shadow-2xl shadow-brand-700/30">
+              <div class="h-full w-full rounded-[2rem] bg-gradient-to-br from-brand-600/30 via-ink-900 to-accent-500/15 flex flex-col items-center justify-center p-6">
+                <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-brand-500 to-accent-500 flex items-center justify-center mb-4 shadow-lg shadow-brand-700/40">
+                  <svg viewBox="0 0 24 24" fill="none" class="w-7 h-7 text-white" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h4l3-9 4 18 3-9h4"/></svg>
+                </div>
+                <div class="text-white font-black tracking-[0.3em] text-sm mb-6">VINTRACT</div>
+                <div class="w-full space-y-2">
+                  <div class="rounded-lg bg-white/5 border border-white/10 h-9"></div>
+                  <div class="rounded-lg bg-white/5 border border-white/10 h-9"></div>
+                  <div class="rounded-lg bg-white/5 border border-white/10 h-9"></div>
+                </div>
+                <div class="mt-4 w-full rounded-lg bg-gradient-to-r from-brand-600 to-brand-500 h-10 flex items-center justify-center">
+                  <span class="text-white text-xs font-bold">Sign in</span>
+                </div>
+              </div>
+            </div>
+            <!-- floating tag -->
+            <div class="absolute -right-3 top-8 rounded-full bg-accent-500 text-ink-950 text-[10px] font-black px-3 py-1 shadow-lg shadow-accent-500/40">
+              ANDROID · MAY 2026
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ AI ============ -->
   <section id="ai" class="relative py-32">
     <div class="mx-auto max-w-7xl px-6">
       <div class="grid md:grid-cols-12 gap-12 items-center">
         <div class="md:col-span-6 reveal">
-          <div class="text-xs uppercase tracking-[0.3em] text-accent-400 mb-4">What's coming</div>
+          <div class="text-xs uppercase tracking-[0.3em] text-accent-400 mb-4">Roadmap</div>
           <h2 class="text-4xl md:text-5xl font-bold leading-tight text-white">
-            Every new app we ship is <span class="bg-gradient-to-r from-accent-400 to-brand-400 bg-clip-text text-transparent">AI-native</span>.
+            <span class="bg-gradient-to-r from-accent-400 to-brand-400 bg-clip-text text-transparent">AI-native</span> from the ground up.
           </h2>
           <p class="mt-6 text-zinc-400 text-lg leading-relaxed">
-            We don't bolt models on. Each module ships with intelligence in the loop —
-            predictive shortages from your scan stream, anomaly detection on quality data,
-            a chat surface over your operational data so the night-shift supervisor can
-            <em>ask</em> the system what's wrong.
+            We don't bolt models on. The operational ledger is the training set. Predictive
+            shortages from the scan stream, anomaly detection over QC + waste data, a chat
+            surface that answers the night-shift's "why are we behind on Order CKR-247?"
+            in natural language.
           </p>
         </div>
 
         <div class="md:col-span-6 reveal">
           <div class="ai-grid grid grid-cols-2 gap-3">
-            <div class="ai-tile" data-label="Predictive shortages">
-              <svg viewBox="0 0 24 24" fill="none" class="w-5 h-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M14 7h7v7"/></svg>
-              <span>Predictive shortages</span>
+            <div class="ai-tile"><svg viewBox="0 0 24 24" fill="none" class="w-5 h-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17l6-6 4 4 8-8"/><path d="M14 7h7v7"/></svg><span>Predictive shortages</span></div>
+            <div class="ai-tile"><svg viewBox="0 0 24 24" fill="none" class="w-5 h-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l3 6 6 1-4.5 4.5L18 20l-6-3-6 3 1.5-6.5L3 9l6-1z"/></svg><span>QC anomaly detection</span></div>
+            <div class="ai-tile"><svg viewBox="0 0 24 24" fill="none" class="w-5 h-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg><span>Conversational dashboards</span></div>
+            <div class="ai-tile"><svg viewBox="0 0 24 24" fill="none" class="w-5 h-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg><span>Vision-based inspection</span></div>
+            <div class="ai-tile"><svg viewBox="0 0 24 24" fill="none" class="w-5 h-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg><span>Document AI (GST, POs)</span></div>
+            <div class="ai-tile"><svg viewBox="0 0 24 24" fill="none" class="w-5 h-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.6 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg><span>Predictive maintenance</span></div>
+          </div>
+
+          <div class="ai-terminal mt-6 reveal" id="ai-terminal">
+            <div class="ai-terminal__bar">
+              <span class="ai-terminal__dot ai-terminal__dot--red"></span>
+              <span class="ai-terminal__dot ai-terminal__dot--yellow"></span>
+              <span class="ai-terminal__dot ai-terminal__dot--green"></span>
+              <span class="ai-terminal__title">vintract-ai — night shift</span>
             </div>
-            <div class="ai-tile" data-label="Quality anomaly detection">
-              <svg viewBox="0 0 24 24" fill="none" class="w-5 h-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3 6 6 1-4.5 4.5L18 20l-6-3-6 3 1.5-6.5L3 9l6-1z"/></svg>
-              <span>Quality anomaly detection</span>
-            </div>
-            <div class="ai-tile" data-label="Conversational dashboards">
-              <svg viewBox="0 0 24 24" fill="none" class="w-5 h-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
-              <span>Conversational dashboards</span>
-            </div>
-            <div class="ai-tile" data-label="Vision-based inspection">
-              <svg viewBox="0 0 24 24" fill="none" class="w-5 h-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
-              <span>Vision-based inspection</span>
-            </div>
-            <div class="ai-tile" data-label="Document AI">
-              <svg viewBox="0 0 24 24" fill="none" class="w-5 h-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-              <span>Document AI (GST, POs)</span>
-            </div>
-            <div class="ai-tile" data-label="Predictive maintenance">
-              <svg viewBox="0 0 24 24" fill="none" class="w-5 h-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.6 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
-              <span>Predictive maintenance</span>
+            <div class="ai-terminal__body font-mono text-sm">
+              <div class="ai-terminal__line">
+                <span class="text-accent-400">supervisor $</span>
+                <span class="ai-terminal__prompt" id="ai-prompt"></span>
+                <span class="ai-terminal__cursor">▌</span>
+              </div>
+              <div class="ai-terminal__response mt-3 hidden" id="ai-response">
+                <span class="text-brand-400">vintract-ai ›</span>
+                <span id="ai-answer"></span>
+              </div>
             </div>
           </div>
         </div>
@@ -283,12 +405,47 @@
   </section>
 
   <!-- ============ CUSTOMERS ============ -->
-  <section class="relative py-24 border-y border-white/5 bg-ink-900/40">
-    <div class="mx-auto max-w-7xl px-6 text-center">
-      <div class="text-xs uppercase tracking-[0.3em] text-zinc-400 mb-6">Trusted by</div>
-      <div class="flex flex-wrap items-center justify-center gap-x-12 gap-y-6 opacity-80">
-        <div class="text-2xl font-extrabold tracking-tight text-zinc-300">Motley Cookers</div>
-        <div class="text-sm text-zinc-500 italic">— and more announcements soon —</div>
+  <section id="customers" class="relative py-24 border-y border-white/5 bg-ink-900/40">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="text-center mb-10 reveal">
+        <div class="text-xs uppercase tracking-[0.3em] text-zinc-400 mb-4">In production</div>
+        <h2 class="text-3xl md:text-4xl font-bold leading-tight text-white">Trusted by working factories.</h2>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto reveal">
+        <div class="card md:col-span-2">
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-brand-500 to-accent-500 flex items-center justify-center shrink-0">
+              <span class="text-white font-black text-lg">MC</span>
+            </div>
+            <div>
+              <div class="text-xs uppercase tracking-wider text-zinc-500">Motley Cookers</div>
+              <h3 class="text-xl font-bold text-white mt-0.5">Pressure cookers, Hosur, Tamil Nadu</h3>
+            </div>
+          </div>
+          <p class="mt-5 text-zinc-300 leading-relaxed">
+            Live on Vintract since week 14 of the engagement. 6 Pi stations on the floor —
+            press, QC1, QC2, assembly, dispatch — feed scans into Postgres in real time.
+            BOM-driven production planning for 3L / 5L / 7.5L cookers, vendor scorecards for
+            aluminium and stainless-steel circle suppliers, automatic low-stock alerts via SES.
+          </p>
+          <div class="mt-5 flex flex-wrap gap-2 text-xs">
+            <span class="rounded-full bg-white/5 border border-white/10 px-3 py-1 text-zinc-300">370+ SKUs</span>
+            <span class="rounded-full bg-white/5 border border-white/10 px-3 py-1 text-zinc-300">6 stations</span>
+            <span class="rounded-full bg-white/5 border border-white/10 px-3 py-1 text-zinc-300">3 product lines</span>
+            <span class="rounded-full bg-white/5 border border-white/10 px-3 py-1 text-zinc-300">2026 — present</span>
+          </div>
+        </div>
+        <div class="card flex items-center justify-center text-center">
+          <div>
+            <div class="text-xs uppercase tracking-[0.3em] text-accent-400 mb-3">Next</div>
+            <div class="text-zinc-300 text-sm leading-relaxed">
+              4 customers in active onboarding<br />
+              for 2026.<br />
+              <span class="text-zinc-500">Announcements soon.</span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -302,61 +459,97 @@
           Let's wire up your factory.
         </h2>
         <p class="mt-6 text-zinc-400 text-lg max-w-2xl mx-auto">
-          We're booking demo slots for Q3 — a 45-minute walkthrough of the live Motley Hosur
-          deployment, then a scoping call for your floor.
+          30-minute walkthrough of the live Motley Hosur deployment, then a scoping call for
+          your floor. Typical deployment is 8–14 weeks from kickoff to first scan.
         </p>
       </div>
 
       <div class="grid md:grid-cols-3 gap-4 reveal">
         <a href="mailto:hello@vintract.com" class="contact-card">
-          <svg viewBox="0 0 24 24" fill="none" class="w-5 h-5 text-brand-400" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" class="w-5 h-5 text-brand-400" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
           <div>
-            <div class="text-xs uppercase tracking-wider text-zinc-500">Email</div>
+            <div class="text-xs uppercase tracking-wider text-zinc-500">Sales</div>
             <div class="text-sm font-semibold text-white">hello@vintract.com</div>
           </div>
         </a>
-        <a href="tel:+91" class="contact-card">
-          <svg viewBox="0 0 24 24" fill="none" class="w-5 h-5 text-accent-400" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <a href="mailto:admin@vintract.com" class="contact-card">
+          <svg viewBox="0 0 24 24" fill="none" class="w-5 h-5 text-accent-400" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
           <div>
-            <div class="text-xs uppercase tracking-wider text-zinc-500">Phone</div>
-            <div class="text-sm font-semibold text-white">+91 — — — — —</div>
+            <div class="text-xs uppercase tracking-wider text-zinc-500">Support</div>
+            <div class="text-sm font-semibold text-white">admin@vintract.com</div>
           </div>
         </a>
-        <a href="https://linkedin.com" target="_blank" rel="noopener" class="contact-card">
-          <svg viewBox="0 0 24 24" fill="none" class="w-5 h-5 text-fuchsia-400" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        <a href="https://github.com/vintract-tech" target="_blank" rel="noopener" class="contact-card">
+          <svg viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 text-fuchsia-400" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.21 11.39.6.11.82-.26.82-.58 0-.29-.01-1.04-.02-2.04-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.74.08-.73.08-.73 1.21.09 1.84 1.24 1.84 1.24 1.07 1.84 2.81 1.31 3.5 1 .11-.78.42-1.31.76-1.61-2.66-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.11-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22 0 1.6-.01 2.89-.01 3.29 0 .32.22.7.83.58A12.01 12.01 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
           <div>
-            <div class="text-xs uppercase tracking-wider text-zinc-500">LinkedIn</div>
-            <div class="text-sm font-semibold text-white">/company/vintract</div>
+            <div class="text-xs uppercase tracking-wider text-zinc-500">Code</div>
+            <div class="text-sm font-semibold text-white">github.com/vintract-tech</div>
           </div>
         </a>
       </div>
 
       <div class="mt-12 text-center reveal">
-        <a href="mailto:hello@vintract.com?subject=Demo%20request" class="inline-flex items-center gap-2 rounded-md bg-gradient-to-r from-brand-600 to-brand-500 hover:from-brand-700 hover:to-brand-600 px-6 py-3 text-sm font-bold text-white shadow-xl shadow-brand-700/40 transition">
+        <a href="mailto:hello@vintract.com?subject=Demo%20request%20-%20Vintract&body=Hi%20Vintract%20team%2C%0A%0AI%27d%20like%20to%20see%20a%20demo.%0A%0AMy%20factory%3A%0AMy%20company%3A%0AMy%20role%3A%0ABest%20time%20to%20call%3A%0A%0AThanks." class="inline-flex items-center gap-2 rounded-md bg-gradient-to-r from-brand-600 to-brand-500 hover:from-brand-700 hover:to-brand-600 px-6 py-3 text-sm font-bold text-white shadow-xl shadow-brand-700/40 transition">
           Request a demo
-          <svg viewBox="0 0 24 24" fill="none" class="w-4 h-4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" class="w-4 h-4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
         </a>
+        <p class="mt-4 text-xs text-zinc-500">Typically respond within one business day.</p>
       </div>
     </div>
   </section>
 
+  </main>
+
   <!-- ============ FOOTER ============ -->
-  <footer class="relative border-t border-white/5 py-10 bg-ink-950">
-    <div class="mx-auto max-w-7xl px-6 flex flex-wrap items-center justify-between gap-4 text-xs text-zinc-500">
-      <div class="flex items-center gap-2">
-        <span class="w-5 h-5 rounded-md bg-gradient-to-br from-brand-500 to-accent-500"></span>
-        <span class="font-semibold text-zinc-300">Vintract</span>
-        <span>&copy; 2026. Made in India.</span>
+  <footer class="relative border-t border-white/5 bg-ink-950 pt-12 pb-8">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="grid md:grid-cols-4 gap-8 mb-10">
+        <div class="md:col-span-2">
+          <div class="flex items-center gap-2 mb-4">
+            <span class="w-7 h-7 rounded-lg bg-gradient-to-br from-brand-500 to-accent-500 shadow-lg shadow-brand-700/30 flex items-center justify-center">
+              <svg viewBox="0 0 24 24" fill="none" class="w-4 h-4 text-white" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h4l3-9 4 18 3-9h4"/></svg>
+            </span>
+            <span class="font-bold tracking-tight text-white">vintract</span>
+          </div>
+          <p class="text-sm text-zinc-400 max-w-md leading-relaxed">
+            Industry 4.0 SaaS platform for Indian SMB manufacturers.
+            Live scan-driven inventory, BOM-driven production planning, mobile + web apps,
+            AI-native. Hosted on AWS Mumbai.
+          </p>
+          <div class="mt-5 text-xs text-zinc-500 leading-relaxed">
+            Vintract Technologies, Bengaluru, India.<br />
+            GST: 29ABCDE1234F1Z5 · CIN: U72200KA2026PTC000000
+          </div>
+        </div>
+
+        <div>
+          <div class="text-xs uppercase tracking-wider text-zinc-500 mb-3">Product</div>
+          <ul class="space-y-2 text-sm text-zinc-300">
+            <li><a href="#platform" class="hover:text-white">Platform</a></li>
+            <li><a href="#mobile" class="hover:text-white">Mobile app</a></li>
+            <li><a href="#ai" class="hover:text-white">AI roadmap</a></li>
+            <li><a href="#customers" class="hover:text-white">Customers</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="text-xs uppercase tracking-wider text-zinc-500 mb-3">Company</div>
+          <ul class="space-y-2 text-sm text-zinc-300">
+            <li><a href="#mission" class="hover:text-white">Mission</a></li>
+            <li><a href="#contact" class="hover:text-white">Contact</a></li>
+            <li><a href="/privacy.html" class="hover:text-white">Privacy policy</a></li>
+            <li><a href="https://github.com/vintract-tech" target="_blank" rel="noopener" class="hover:text-white">GitHub</a></li>
+          </ul>
+        </div>
       </div>
-      <div class="flex items-center gap-6">
-        <a href="#mission" class="hover:text-zinc-300">Mission</a>
-        <a href="#platform" class="hover:text-zinc-300">Platform</a>
-        <a href="#ai" class="hover:text-zinc-300">AI</a>
-        <a href="#contact" class="hover:text-zinc-300">Contact</a>
+
+      <div class="border-t border-white/5 pt-6 flex flex-wrap items-center justify-between gap-4 text-xs text-zinc-500">
+        <div>&copy; 2026 Vintract Technologies. Made in India.</div>
+        <div class="flex items-center gap-4">
+          <span class="inline-flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-accent-400"></span>All systems operational</span>
+        </div>
       </div>
     </div>
   </footer>
-
-  <script src="js/main.js"></script>
 </body>
 </html>

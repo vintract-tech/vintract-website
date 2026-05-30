@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — Vintract</title>
+  <meta name="description" content="Privacy policy for the Vintract platform and the Vintract Mobile Android app." />
+  <meta name="theme-color" content="#0b0f1a" />
+  <link rel="canonical" href="https://vintract.com/privacy.html" />
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/main.css" />
+  <style>
+    .doc { max-width: 760px; }
+    .doc h2 { font-size: 1.15rem; font-weight: 700; color: #fff; margin-top: 2rem; }
+    .doc p, .doc li { color: rgb(161, 161, 170); line-height: 1.7; }
+    .doc ul { padding-left: 1.25rem; }
+    .doc li { margin-bottom: 0.4rem; }
+    .doc a { color: #a78bfa; }
+  </style>
+</head>
+<body class="bg-ink-950 text-zinc-100 font-sans antialiased">
+  <header class="fixed top-0 left-0 right-0 z-40 backdrop-blur-md bg-ink-950/40 border-b border-white/5">
+    <div class="mx-auto max-w-7xl px-6 h-14 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-2 group" aria-label="Vintract home">
+        <span class="w-7 h-7 rounded-lg bg-gradient-to-br from-brand-500 to-accent-500 shadow-lg shadow-brand-700/30 flex items-center justify-center">
+          <svg viewBox="0 0 24 24" fill="none" class="w-4 h-4 text-white" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l3-9 4 18 3-9h4"/></svg>
+        </span>
+        <span class="font-bold tracking-tight text-white">vintract</span>
+      </a>
+      <a href="/" class="text-sm text-zinc-300 hover:text-white transition">← Home</a>
+    </div>
+  </header>
+
+  <main class="mx-auto px-6 pt-28 pb-24 doc">
+    <div class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-zinc-300 mb-5 backdrop-blur">
+      Vintract Mobile · Android
+    </div>
+    <h1 class="text-4xl md:text-5xl font-black tracking-tight leading-tight text-white">Privacy Policy</h1>
+    <p class="mt-3 text-sm text-zinc-500">Effective 2026-05-27 · Vintract Technologies, Bengaluru</p>
+
+    <p class="mt-8">
+      Vintract Mobile (the "App") is a workplace inventory and production
+      tracking tool installed by manufacturing companies and their
+      employees ("Customers"). This policy explains what data the App
+      handles, how it is stored, and your rights.
+    </p>
+
+    <h2>1. Data we collect</h2>
+    <ul>
+      <li><strong class="text-zinc-200">Account credentials.</strong> Your work email and password are sent to your Customer's Vintract backend to issue a signed token (JWT). The password is never stored on the device.</li>
+      <li><strong class="text-zinc-200">Session token.</strong> The JWT issued by your Customer's backend is stored locally in the device's secure storage (iOS Keychain / Android Keystore) so you don't need to log in every time. It is removed when you sign out.</li>
+      <li><strong class="text-zinc-200">Workspace pointer.</strong> The workspace code you entered (e.g. "motley-hsr") and the resolved API base URL are stored locally so the App knows which backend to talk to.</li>
+      <li><strong class="text-zinc-200">SKU scans.</strong> When you scan a barcode or type an SKU code, the value is sent to your Customer's backend to look up the item. We do not retain images from the camera.</li>
+      <li><strong class="text-zinc-200">Movement records.</strong> Receive-inward, move-to-floor, waste-log and production updates you submit are sent to your Customer's backend, attributed to your user account.</li>
+    </ul>
+
+    <h2>2. Data we do not collect</h2>
+    <ul>
+      <li>We do not collect location data.</li>
+      <li>We do not collect contacts, photos (other than the live camera viewfinder used briefly during a scan), or other phone-stored personal data.</li>
+      <li>We do not show advertising and do not use third-party analytics SDKs that profile you.</li>
+    </ul>
+
+    <h2>3. Camera access</h2>
+    <p>
+      The App requests camera permission so it can scan SKU barcodes
+      printed on items in the factory. Frames from the camera are
+      processed on-device only and are never saved or transmitted. The
+      decoded barcode text is sent to your Customer's backend to resolve
+      the item.
+    </p>
+
+    <h2>4. Where your data lives</h2>
+    <p>
+      The App is "universal" — it does not have a Vintract-central
+      data store. All business data (items, movements, orders, waste
+      records) lives in your Customer's own Vintract backend, hosted on
+      AWS infrastructure in a region chosen by your Customer (typically
+      ap-south-1 / Mumbai for Indian Customers). Vintract Technologies
+      processes data only as instructed by your Customer.
+    </p>
+
+    <h2>5. Retention and deletion</h2>
+    <p>
+      Business data retention follows your Customer's policy. To request
+      that your account be deactivated or your records removed, contact
+      your administrator. They can also reach Vintract support directly
+      at <a href="mailto:admin@vintract.com">admin@vintract.com</a> on
+      your behalf.
+    </p>
+    <p>
+      You can sign out of the App at any time from Profile → Sign out,
+      which immediately removes your session token and cached account
+      details from the device.
+    </p>
+
+    <h2>6. Children</h2>
+    <p>
+      The App is designed for use by employees of manufacturing
+      Customers and is not intended for or marketed to anyone under 16
+      years of age.
+    </p>
+
+    <h2>7. Changes</h2>
+    <p>
+      We may update this policy. Material changes will be communicated
+      through the App or by email to your Customer. The "Effective" date
+      at the top reflects the current version.
+    </p>
+
+    <h2>8. Contact</h2>
+    <p>
+      Questions? Write to <a href="mailto:admin@vintract.com">admin@vintract.com</a>.
+    </p>
+  </main>
+
+  <footer class="relative border-t border-white/5 bg-ink-950 py-8">
+    <div class="mx-auto max-w-7xl px-6 text-xs text-zinc-500 flex flex-wrap items-center justify-between gap-3">
+      <div>&copy; 2026 Vintract Technologies. Made in India.</div>
+      <a href="/" class="hover:text-zinc-300">Back to home</a>
+    </div>
+  </footer>
+</body>
+</html>

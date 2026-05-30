@@ -11,6 +11,7 @@
   if (!window.gsap || !window.ScrollTrigger) return;
 
   gsap.registerPlugin(ScrollTrigger);
+  if (window.MotionPathPlugin) gsap.registerPlugin(MotionPathPlugin);
 
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
@@ -165,5 +166,133 @@
             : "rgba(7, 9, 18, 0.4)";
       },
     });
+  }
+
+  // -------- Platform connector: SVG line drawn between cards on scroll --------
+  const connectorSvg = document.querySelector(".platform-connector");
+  const connectorPath = document.querySelector(".platform-connector__path");
+  const connectorDot = document.querySelector(".platform-connector__dot");
+  const cards = document.querySelectorAll("#platform .card");
+
+  if (connectorSvg && connectorPath && cards.length >= 3 && !reducedMotion) {
+    function updateConnectorPath() {
+      const wrapper = connectorSvg.parentElement;
+      const wrapperRect = wrapper.getBoundingClientRect();
+
+      const points = Array.from(cards).map((card) => {
+        const rect = card.getBoundingClientRect();
+        return {
+          x: rect.left - wrapperRect.left + rect.width / 2,
+          y: rect.top - wrapperRect.top + 30,
+        };
+      });
+
+      // Smooth curve through card tops
+      const midX1 = (points[0].x + points[1].x) / 2;
+      const midX2 = (points[1].x + points[2].x) / 2;
+      const d = `M ${points[0].x} ${points[0].y} Q ${midX1} ${points[0].y - 40} ${points[1].x} ${points[1].y} Q ${midX2} ${points[1].y - 40} ${points[2].x} ${points[2].y}`;
+
+      connectorPath.setAttribute("d", d);
+      connectorSvg.setAttribute("viewBox", `0 0 ${wrapperRect.width} ${wrapperRect.height}`);
+
+      return connectorPath.getTotalLength();
+    }
+
+    // Initial path setup
+    let pathLength = updateConnectorPath();
+    connectorPath.style.strokeDasharray = pathLength;
+    connectorPath.style.strokeDashoffset = pathLength;
+
+    // Animate the line drawing on scroll
+    gsap.to(connectorPath, {
+      strokeDashoffset: 0,
+      ease: "none",
+      scrollTrigger: {
+        trigger: ".platform-cards-wrapper",
+        start: "top 70%",
+        end: "bottom 60%",
+        scrub: 0.5,
+      },
+    });
+
+    // Animate the dot traveling along the path
+    gsap.set(connectorDot, { opacity: 1 });
+    gsap.to(connectorDot, {
+      motionPath: {
+        path: connectorPath,
+        align: connectorPath,
+        alignOrigin: [0.5, 0.5],
+      },
+      ease: "none",
+      scrollTrigger: {
+        trigger: ".platform-cards-wrapper",
+        start: "top 70%",
+        end: "bottom 60%",
+        scrub: 0.5,
+      },
+    });
+
+    // Recalculate on resize
+    window.addEventListener("resize", () => {
+      pathLength = updateConnectorPath();
+      connectorPath.style.strokeDasharray = pathLength;
+    });
+  }
+
+  // -------- AI Terminal: typewriter effect --------
+  const aiPromptEl = document.getElementById("ai-prompt");
+  const aiResponseEl = document.getElementById("ai-response");
+  const aiAnswerEl = document.getElementById("ai-answer");
+  const aiTerminal = document.getElementById("ai-terminal");
+
+  if (aiPromptEl && aiResponseEl && aiAnswerEl && aiTerminal) {
+    const question = "What is causing the bottleneck on Station 3?";
+    const answer = "Station 3 press-fit cycle time spiked 18% at 02:14. Root cause: hydraulic pressure drop on actuator B. Recommending maintenance window before next shift.";
+    let hasPlayed = false;
+
+    function typeText(el, text, speed, callback) {
+      let i = 0;
+      function tick() {
+        if (i <= text.length) {
+          el.textContent = text.slice(0, i);
+          i++;
+          setTimeout(tick, speed);
+        } else if (callback) {
+          callback();
+        }
+      }
+      tick();
+    }
+
+    function playTerminal() {
+      if (hasPlayed) return;
+      hasPlayed = true;
+
+      typeText(aiPromptEl, question, 40, () => {
+        // Hide cursor, show response
+        const cursor = aiTerminal.querySelector(".ai-terminal__cursor");
+        if (cursor) cursor.style.display = "none";
+
+        setTimeout(() => {
+          aiResponseEl.classList.remove("hidden");
+          typeText(aiAnswerEl, answer, 25);
+        }, 400);
+      });
+    }
+
+    if (reducedMotion) {
+      aiPromptEl.textContent = question;
+      const cursor = aiTerminal.querySelector(".ai-terminal__cursor");
+      if (cursor) cursor.style.display = "none";
+      aiResponseEl.classList.remove("hidden");
+      aiAnswerEl.textContent = answer;
+    } else {
+      ScrollTrigger.create({
+        trigger: aiTerminal,
+        start: "top 80%",
+        once: true,
+        onEnter: playTerminal,
+      });
+    }
   }
 })();

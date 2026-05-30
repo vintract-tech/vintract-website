@@ -1,0 +1,6 @@
+/* Vintract marketing site — compiled by Tailwind CLI. */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "./_legacy.css";
