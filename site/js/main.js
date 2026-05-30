@@ -153,20 +153,7 @@
     });
   });
 
-  // -------- Nav background opacity grows as we scroll past hero --------
-  const nav = document.querySelector("header");
-  if (nav && !reducedMotion) {
-    ScrollTrigger.create({
-      start: "top -50",
-      end: 99999,
-      onUpdate: (self) => {
-        nav.style.backgroundColor =
-          self.direction === 1 || self.scroll() > 50
-            ? "rgba(7, 9, 18, 0.78)"
-            : "rgba(7, 9, 18, 0.4)";
-      },
-    });
-  }
+  // (Removed: nav-background-on-scroll. Nav is now a static flat bar.)
 
   // -------- Platform connector: SVG line drawn between cards on scroll --------
   const connectorSvg = document.querySelector(".platform-connector");
