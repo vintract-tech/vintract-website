@@ -35,7 +35,7 @@
 
   <!-- Compiled Tailwind. Lean static CSS, no CDN runtime.
        ?v query is a cache-buster — bump on every CSS rebuild. -->
-  <link rel="stylesheet" href="/css/main.css?v=20260530d" />
+  <link rel="stylesheet" href="/css/main.css?v=20260613a" />
 
   <!-- GSAP for scroll animations. Async / defer to keep LCP clean. -->
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
@@ -105,6 +105,7 @@
       <nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-slate-700" aria-label="Primary">
         <a href="#platform"   class="hover:text-brand-600 transition">Platform</a>
         <a href="#mobile"     class="hover:text-brand-600 transition">Mobile</a>
+        <a href="#apps"       class="hover:text-brand-600 transition">Apps</a>
         <a href="#ai"         class="hover:text-brand-600 transition">AI</a>
         <a href="#mission"    class="hover:text-brand-600 transition">Mission</a>
         <a href="/contact.html" class="hover:text-brand-600 transition">Contact</a>
@@ -490,6 +491,73 @@
     </div>
   </section>
 
+  <!-- ============ GET THE APPS ============ -->
+  <section id="apps" class="relative py-32 border-y border-slate-200 bg-white/50">
+    <div class="mx-auto max-w-screen-2xl px-8 lg:px-16">
+      <div class="text-center mb-12 reveal">
+        <div class="text-xs uppercase tracking-[0.3em] text-slate-500 mb-4">Get the apps</div>
+        <h2 class="text-3xl md:text-4xl font-bold leading-tight text-slate-900">Three apps. One platform.</h2>
+        <p class="mt-4 text-slate-600 max-w-2xl mx-auto">
+          A purpose-built surface for every person on the floor — the gate, the store, and the team.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-5 max-w-5xl mx-auto reveal">
+
+        <!-- Punch -->
+        <div class="card flex flex-col">
+          <div class="w-12 h-12 rounded-xl bg-teal-50 border border-teal-200 flex items-center justify-center mb-4">
+            <svg viewBox="0 0 24 24" fill="none" class="w-6 h-6 text-teal-600" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+          </div>
+          <h3 class="text-lg font-bold text-slate-900">Vintract Punch</h3>
+          <p class="mt-1.5 text-sm text-slate-600 flex-1">Face-recognition attendance kiosk for the factory gate. On-device matching, shift-aware clock-in/out, works offline.</p>
+          <!-- SWAP: replace href with the Google Play URL + badge once published -->
+          <a href="https://vintract-app-downloads-prod-764416828771.s3.ap-south-1.amazonaws.com/punch/vintract-punch-latest.apk"
+             class="mt-5 inline-flex items-center justify-center gap-2 rounded-md bg-teal-600 hover:bg-teal-700 px-4 py-2.5 text-sm font-semibold text-white transition">
+            <svg viewBox="0 0 24 24" fill="none" class="w-4 h-4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download APK
+          </a>
+          <span class="mt-2 text-[11px] text-slate-400 text-center">Android · sideload</span>
+        </div>
+
+        <!-- Ops -->
+        <div class="card flex flex-col">
+          <div class="w-12 h-12 rounded-xl bg-violet-50 border border-violet-200 flex items-center justify-center mb-4">
+            <svg viewBox="0 0 24 24" fill="none" class="w-6 h-6 text-violet-600" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+          </div>
+          <h3 class="text-lg font-bold text-slate-900">Vintract Ops</h3>
+          <p class="mt-1.5 text-sm text-slate-600 flex-1">The operator app — scan barcodes to receive stock, move material to the floor, and run production, right from a phone.</p>
+          <!-- SWAP: replace href with the Google Play URL + badge once published -->
+          <a href="https://vintract-app-downloads-prod-764416828771.s3.ap-south-1.amazonaws.com/mobile/vintract-mobile-latest.apk"
+             class="mt-5 inline-flex items-center justify-center gap-2 rounded-md bg-violet-600 hover:bg-violet-700 px-4 py-2.5 text-sm font-semibold text-white transition">
+            <svg viewBox="0 0 24 24" fill="none" class="w-4 h-4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download APK
+          </a>
+          <span class="mt-2 text-[11px] text-slate-400 text-center">Android · sideload</span>
+        </div>
+
+        <!-- People -->
+        <div class="card flex flex-col">
+          <div class="w-12 h-12 rounded-xl bg-sky-50 border border-sky-200 flex items-center justify-center mb-4">
+            <svg viewBox="0 0 24 24" fill="none" class="w-6 h-6 text-sky-600" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <h3 class="text-lg font-bold text-slate-900">Vintract People</h3>
+          <p class="mt-1.5 text-sm text-slate-600 flex-1">Employee self-service — check attendance, apply for leave, and download payslips. Runs in any browser, nothing to install.</p>
+          <a href="https://app.motley-hsr.vintract.com"
+             class="mt-5 inline-flex items-center justify-center gap-2 rounded-md bg-sky-600 hover:bg-sky-700 px-4 py-2.5 text-sm font-semibold text-white transition">
+            <svg viewBox="0 0 24 24" fill="none" class="w-4 h-4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            Open web app
+          </a>
+          <span class="mt-2 text-[11px] text-slate-400 text-center">Web · any device</span>
+        </div>
+
+      </div>
+      <p class="mt-8 text-center text-xs text-slate-400 reveal">
+        Android builds are sideload APKs today; Google Play listings are on the way.
+      </p>
+    </div>
+  </section>
+
   <!-- ============ CONTACT ============ -->
   <section id="contact" class="relative py-32">
     <div class="mx-auto max-w-4xl px-6">
@@ -565,6 +633,7 @@
           <ul class="space-y-2 text-sm text-slate-700">
             <li><a href="#platform" class="hover:text-brand-600">Platform</a></li>
             <li><a href="#mobile" class="hover:text-brand-600">Mobile app</a></li>
+            <li><a href="#apps" class="hover:text-brand-600">Download apps</a></li>
             <li><a href="#ai" class="hover:text-brand-600">AI roadmap</a></li>
             <li><a href="#how" class="hover:text-brand-600">How we deploy</a></li>
           </ul>
