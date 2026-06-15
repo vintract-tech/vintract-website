@@ -106,6 +106,7 @@ body > footer {
   content: "";
   position: absolute;
   inset: 0;
+  pointer-events: none;   /* gradient-border overlay must never eat taps on buttons inside the card */
   border-radius: inherit;
   padding: 1px;
   background: linear-gradient(135deg, rgba(139, 92, 246, 0.5), rgba(16, 185, 129, 0.0) 60%);
@@ -376,3 +377,17 @@ textarea.form-input { resize: vertical; min-height: 110px; }
   pointer-events: none;
 }
 .nav-pill:hover::before { opacity: 1; }
+
+
+/* ============ mobile polish ============ */
+@media (max-width: 768px) {
+  /* The desktop sections use py-32 (8rem) — far too much empty space on
+     a phone, which makes the page feel broken/endless. Tighten it. */
+  section { padding-top: 3.5rem !important; padding-bottom: 3.5rem !important; }
+  /* Guarantee comfortable tap targets for any in-card button/link. */
+  .card a[href] { min-height: 44px; }
+}
+
+/* Safety net: if JS is disabled entirely (no GSAP path runs at all),
+   reveal blocks must still be visible. */
+.no-js .reveal { opacity: 1 !important; transform: none !important; }

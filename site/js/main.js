@@ -8,7 +8,15 @@
 (function () {
   "use strict";
 
-  if (!window.gsap || !window.ScrollTrigger) return;
+  // Fallback: if GSAP/ScrollTrigger didn't load (slow mobile network,
+  // content blocker, CDN hiccup), the .reveal blocks would stay at
+  // opacity:0 and the whole page would look blank. Force everything
+  // visible and bail — static page, no animation, but fully usable.
+  if (!window.gsap || !window.ScrollTrigger) {
+    document.querySelectorAll(".reveal, .hero-eyebrow, .hero-title, .hero-sub, .hero-cta, .hero-stats")
+      .forEach((el) => { el.style.opacity = "1"; el.style.transform = "none"; });
+    return;
+  }
 
   gsap.registerPlugin(ScrollTrigger);
   if (window.MotionPathPlugin) gsap.registerPlugin(MotionPathPlugin);
