@@ -190,6 +190,23 @@ resource "aws_route53_record" "apex_aaaa" {
   }
 }
 
+# Zoho Mail — inbound MX for admin@vintract.com (and the domain's mailboxes).
+# These were dropped when the hosted zone was rebuilt; managed here in TF now
+# so they survive future zone changes. Low TTL for fast propagation.
+# Note: Zoho also expects an SPF TXT (v=spf1 include:zoho.in ~all) + DKIM —
+# manage those alongside the apex TXT if outbound deliverability needs it.
+resource "aws_route53_record" "mx_zoho" {
+  zone_id = var.hosted_zone_id
+  name    = var.domain
+  type    = "MX"
+  ttl     = 300
+  records = [
+    "10 mx.zoho.in",
+    "20 mx2.zoho.in",
+    "50 mx3.zoho.in",
+  ]
+}
+
 resource "aws_route53_record" "www_a" {
   count   = var.www_alias ? 1 : 0
   zone_id = var.hosted_zone_id
