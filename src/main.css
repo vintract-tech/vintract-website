@@ -81,15 +81,16 @@
   height: 100%;
 }
 .bg-trend__line {
-  stroke: rgba(255, 255, 255, 0.9);
-  stroke-width: 3.5;
+  stroke: url(#trendGrad);
+  stroke-width: 4;
+  opacity: 0.45;
   stroke-linejoin: round;
   stroke-linecap: round;
-  filter: drop-shadow(0 2px 8px rgba(124, 58, 237, 0.22));
+  filter: drop-shadow(0 2px 10px rgba(124, 58, 237, 0.35));
 }
 .bg-trend__tip {
   fill: #ef4444;
-  filter: drop-shadow(0 0 6px rgba(239, 68, 68, 0.5));
+  filter: drop-shadow(0 0 8px rgba(239, 68, 68, 0.65));
 }
 
 body > header,

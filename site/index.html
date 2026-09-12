@@ -35,13 +35,13 @@
 
   <!-- Compiled Tailwind. Lean static CSS, no CDN runtime.
        ?v query is a cache-buster. Bump on every CSS rebuild. -->
-  <link rel="stylesheet" href="/css/main.css?v=20260912s" />
+  <link rel="stylesheet" href="/css/main.css?v=20260912t" />
 
   <!-- GSAP for scroll animations. Async / defer to keep LCP clean. -->
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/MotionPathPlugin.min.js"></script>
-  <script defer src="/js/main.js?v=20260912s"></script>
+  <script defer src="/js/main.js?v=20260912t"></script>
 
   <!-- Plausible: privacy-friendly, cookieless, GDPR/DPDP compliant. -->
   <script defer data-domain="vintract.com" src="https://plausible.io/js/script.js"></script>
@@ -141,9 +141,16 @@
          page, red tip riding the end. White stroke so it stays a whisper
          against the aurora. -->
     <svg class="bg-trend" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMax slice">
+      <defs>
+        <linearGradient id="trendGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="#8b5cf6" />
+          <stop offset="55%" stop-color="#7c3aed" />
+          <stop offset="100%" stop-color="#10b981" />
+        </linearGradient>
+      </defs>
       <path id="bg-trend-line" class="bg-trend__line" fill="none"
         d="M -30 870 L 150 760 L 290 805 L 460 645 L 610 700 L 790 515 L 945 570 L 1130 375 L 1255 430 L 1470 205" />
-      <polygon id="bg-trend-tip" class="bg-trend__tip" points="0,-8 16,0 0,8" />
+      <polygon id="bg-trend-tip" class="bg-trend__tip" points="0,-9 18,0 0,9" />
     </svg>
   </div>
 
