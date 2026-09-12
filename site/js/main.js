@@ -146,6 +146,48 @@
     gsap.set(heroParts.concat([".hero-title"]), { opacity: 1, y: 0 });
   }
 
+  // -------- Hero verb rotation: digitise -> modernise -> ... --------
+  // The split pass above wrapped the gradient span in an overflow-hidden
+  // .word-mask, so the swap slides the old word up out of view and the
+  // new one in from below. The mask width tweens along so the rest of
+  // the headline glides instead of snapping.
+  const rotator = document.getElementById("hero-rotator");
+  if (rotator && !reducedMotion) {
+    const verbs = ["digitise", "modernise", "automate", "connect", "transform"];
+    let vi = 0;
+    const mask = rotator.parentElement;
+
+    function widthOf(text) {
+      const probe = rotator.cloneNode();
+      probe.textContent = text;
+      probe.style.position = "absolute";
+      probe.style.visibility = "hidden";
+      mask.appendChild(probe);
+      const w = probe.getBoundingClientRect().width;
+      probe.remove();
+      return w;
+    }
+
+    // Lock the mask to the current word so the width tween has a start.
+    gsap.set(mask, { width: widthOf(verbs[0]) });
+    window.addEventListener("resize", () => {
+      gsap.set(mask, { width: widthOf(rotator.textContent) });
+    });
+
+    setInterval(() => {
+      vi = (vi + 1) % verbs.length;
+      const next = verbs[vi];
+      const tl = gsap.timeline();
+      tl.to(rotator, { yPercent: -115, duration: 0.35, ease: "power2.in" })
+        .to(mask, { width: widthOf(next), duration: 0.35, ease: "power2.inOut" }, "<")
+        .add(() => {
+          rotator.textContent = next;
+          gsap.set(rotator, { yPercent: 115 });
+        })
+        .to(rotator, { yPercent: 0, duration: 0.45, ease: "power2.out" });
+    }, 2400);
+  }
+
   // -------- Hero title gradient shimmer (always on, very subtle) --------
   // Implemented via CSS animation if we add one. Left out for now to keep
   // motion budget low. The gradient text already reads well static.

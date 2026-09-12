@@ -35,13 +35,13 @@
 
   <!-- Compiled Tailwind. Lean static CSS, no CDN runtime.
        ?v query is a cache-buster. Bump on every CSS rebuild. -->
-  <link rel="stylesheet" href="/css/main.css?v=20260912c" />
+  <link rel="stylesheet" href="/css/main.css?v=20260912d" />
 
   <!-- GSAP for scroll animations. Async / defer to keep LCP clean. -->
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/MotionPathPlugin.min.js"></script>
-  <script defer src="/js/main.js"></script>
+  <script defer src="/js/main.js?v=20260912d"></script>
 
   <!-- Plausible: privacy-friendly, cookieless, GDPR/DPDP compliant. -->
   <script defer data-domain="vintract.com" src="https://plausible.io/js/script.js"></script>
@@ -172,13 +172,13 @@
   <!-- ============ HERO ============ -->
   <section id="top" class="relative min-h-[92svh] flex items-center pt-28 pb-10">
     <div class="mx-auto max-w-screen-2xl px-8 lg:px-16 w-full text-center">
-      <div class="mx-auto max-w-4xl">
+      <div class="mx-auto max-w-5xl">
         <div class="hero-eyebrow inline-flex items-center gap-2 rounded-full border border-brand-600/20 bg-white/70 px-3 py-1 text-xs font-medium text-slate-700 mb-6 backdrop-blur">
           <span class="w-1.5 h-1.5 rounded-full bg-accent-500 animate-pulse"></span>
           Low-Cost Industry 4.0 · Custom-Built For Your Factory
         </div>
-        <h1 class="hero-title text-5xl md:text-7xl font-black tracking-tight leading-[1.05] text-slate-900 mb-6">
-          We <span class="hero-gradient-text bg-gradient-to-r from-brand-600 via-brand-500 to-accent-500 bg-clip-text text-transparent">digitise</span> your factory.
+        <h1 class="hero-title text-5xl md:text-6xl xl:text-7xl font-black tracking-tight leading-[1.05] text-slate-900 mb-6 lg:whitespace-nowrap">
+          We <span id="hero-rotator" class="hero-gradient-text bg-gradient-to-r from-brand-600 via-brand-500 to-accent-500 bg-clip-text text-transparent">digitise</span> your factory.
         </h1>
         <p class="hero-sub mx-auto max-w-3xl text-lg md:text-xl text-slate-600 mb-8 leading-relaxed">
           We don't sell boxed software. We walk your floor, understand how your
