@@ -8,6 +8,15 @@
 (function () {
   "use strict";
 
+  // Every fresh load starts at the top: no browser scroll restoration,
+  // and a leftover #anchor in the URL is cleared instead of jumping the
+  // page mid-section. In-page anchor clicks still work normally.
+  if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+  if (window.location.hash) {
+    history.replaceState(null, "", window.location.pathname + window.location.search);
+  }
+  window.scrollTo(0, 0);
+
   // -------- Hero verb rotation: digitise -> modernise -> ... --------
   // Content feature, not decoration: it must rotate on every machine.
   // With GSAP and motion allowed, the swap slides through the overflow
