@@ -150,7 +150,7 @@
       trendSvg.setAttribute("viewBox", "0 0 " + W + " " + H);
       const pts = [
         [-0.03, 0.97], [0.10, 0.84], [0.20, 0.89], [0.33, 0.71], [0.45, 0.77],
-        [0.58, 0.56], [0.70, 0.62], [0.83, 0.41], [0.90, 0.47], [1.03, 0.20],
+        [0.58, 0.56], [0.70, 0.62], [0.83, 0.41], [0.90, 0.47], [0.965, 0.13],
       ].map(function (f) { return [f[0] * W, f[1] * H]; });
       trendLine.setAttribute("d", "M " + pts.map(function (p) {
         return p[0].toFixed(1) + " " + p[1].toFixed(1);
