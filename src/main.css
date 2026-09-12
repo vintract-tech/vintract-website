@@ -392,6 +392,20 @@ textarea.form-input { resize: vertical; min-height: 110px; }
 .nav-pill:hover::before { opacity: 1; }
 
 
+/* ============ large-screen scale ============ */
+/* Everything in the site is sized in rem (Tailwind), so scaling the root
+   font grows type, buttons and spacing together on big monitors instead
+   of leaving the fixed-width column marooned in whitespace. */
+@media (min-width: 1536px) {
+  html { font-size: 17px; }
+}
+@media (min-width: 1800px) {
+  html { font-size: 19px; }
+  /* The outer section container is a fixed 1536px utility; give it more
+     room once the screen can afford it. */
+  .max-w-screen-2xl { max-width: 1720px; }
+}
+
 /* ============ mobile polish ============ */
 @media (max-width: 768px) {
   /* The desktop sections use py-32 (8rem) — far too much empty space on
