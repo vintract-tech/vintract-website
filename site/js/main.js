@@ -120,27 +120,6 @@
       });
     }
 
-    // Value trend line: draws from bottom-left to top-right across the
-    // whole page scroll, the red tip riding its end. The visual "number
-    // going up" that the product promises.
-    const trendLine = document.getElementById("bg-trend-line");
-    const trendTip = document.getElementById("bg-trend-tip");
-    if (trendLine && trendTip && window.MotionPathPlugin) {
-      const len = trendLine.getTotalLength();
-      trendLine.style.strokeDasharray = len;
-      trendLine.style.strokeDashoffset = len;
-      gsap.to(trendLine, {
-        strokeDashoffset: 0,
-        ease: "none",
-        scrollTrigger: { trigger: document.body, start: "top top", end: "bottom bottom", scrub: 0.4 },
-      });
-      gsap.to(trendTip, {
-        motionPath: { path: trendLine, align: trendLine, alignOrigin: [0.5, 0.5], autoRotate: true },
-        ease: "none",
-        scrollTrigger: { trigger: document.body, start: "top top", end: "bottom bottom", scrub: 0.4 },
-      });
-    }
-
     // Scan line tracks scroll position. Feels like a sensor sweeping
     // down the document as the visitor reads.
     const scan = document.getElementById("bg-scan");
@@ -151,6 +130,29 @@
         scrollTrigger: { trigger: document.body, start: "top top", end: "bottom bottom", scrub: 0.6 },
       });
     }
+  }
+
+  // -------- Background value trend line --------
+  // Draws from bottom-left to top-right across the whole page scroll,
+  // the red tip riding its end. Scroll-driven (not autonomous), so it
+  // runs regardless of the OS reduced-motion setting; without it the
+  // line sat fully drawn and the tip never left the corner.
+  const trendLine = document.getElementById("bg-trend-line");
+  const trendTip = document.getElementById("bg-trend-tip");
+  if (trendLine && trendTip && window.MotionPathPlugin) {
+    const len = trendLine.getTotalLength();
+    trendLine.style.strokeDasharray = len;
+    trendLine.style.strokeDashoffset = len;
+    gsap.to(trendLine, {
+      strokeDashoffset: 0,
+      ease: "none",
+      scrollTrigger: { trigger: document.body, start: "top top", end: "bottom bottom", scrub: 0.4 },
+    });
+    gsap.to(trendTip, {
+      motionPath: { path: trendLine, align: trendLine, alignOrigin: [0.5, 0.5], autoRotate: true },
+      ease: "none",
+      scrollTrigger: { trigger: document.body, start: "top top", end: "bottom bottom", scrub: 0.4 },
+    });
   }
 
   // -------- Hero entrance: stagger eyebrow / title / sub / CTA / stats --------
