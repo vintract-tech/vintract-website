@@ -157,7 +157,7 @@ body > footer {
   letter-spacing: -0.02em;
 }
 .card__body {
-  font-size: 0.95rem;
+  font-size: 1.02rem;
   color: rgb(71, 85, 105);
   line-height: 1.6;
   margin-bottom: 20px;
@@ -172,7 +172,7 @@ body > footer {
 .card__list li {
   position: relative;
   padding-left: 18px;
-  font-size: 0.85rem;
+  font-size: 0.92rem;
   color: rgb(51, 65, 85);
 }
 .card__list li::before {
@@ -470,7 +470,7 @@ textarea.form-input { resize: vertical; min-height: 110px; }
   display: inline-flex;
   align-items: center;
   gap: 40px;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;

@@ -35,13 +35,13 @@
 
   <!-- Compiled Tailwind. Lean static CSS, no CDN runtime.
        ?v query is a cache-buster. Bump on every CSS rebuild. -->
-  <link rel="stylesheet" href="/css/main.css?v=20260912d" />
+  <link rel="stylesheet" href="/css/main.css?v=20260912f" />
 
   <!-- GSAP for scroll animations. Async / defer to keep LCP clean. -->
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/MotionPathPlugin.min.js"></script>
-  <script defer src="/js/main.js?v=20260912d"></script>
+  <script defer src="/js/main.js?v=20260912f"></script>
 
   <!-- Plausible: privacy-friendly, cookieless, GDPR/DPDP compliant. -->
   <script defer data-domain="vintract.com" src="https://plausible.io/js/script.js"></script>
@@ -144,13 +144,13 @@
     style="background-color: #ffffff;"
     class="fixed top-0 left-0 right-0 z-50 border-b border-slate-200 shadow-md shadow-slate-900/5"
   >
-    <div class="mx-auto max-w-screen-2xl px-8 lg:px-16 h-20 flex items-center justify-between">
+    <div class="w-full px-6 lg:px-10 h-20 flex items-center justify-between">
       <a href="#top" class="flex items-center gap-3" aria-label="Vintract home">
         <img src="/assets/vintract-mark-v3.png" alt="" class="w-11 h-11 rounded-lg" width="44" height="44" />
         <span class="font-black tracking-[0.18em] text-slate-900 text-base md:text-lg">VINTRACT</span>
       </a>
 
-      <nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-slate-700" aria-label="Primary">
+      <nav class="hidden md:flex items-center gap-8 text-base font-semibold text-slate-700" aria-label="Primary">
         <a href="#platform"   class="hover:text-brand-600 transition">Platform</a>
         <a href="#work"       class="hover:text-brand-600 transition">Work</a>
         <a href="#mobile"     class="hover:text-brand-600 transition">Mobile</a>
@@ -160,7 +160,7 @@
         <a href="/contact.html" class="hover:text-brand-600 transition">Contact</a>
       </nav>
 
-      <a href="/contact.html" class="inline-flex items-center gap-2 rounded-md bg-brand-600 hover:bg-brand-700 px-4 py-2 text-sm font-semibold text-white transition">
+      <a href="/contact.html" class="inline-flex items-center gap-2 rounded-md bg-brand-600 hover:bg-brand-700 px-5 py-2.5 text-base font-semibold text-white transition">
         Book a demo
         <svg viewBox="0 0 24 24" fill="none" class="w-4 h-4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
       </a>
@@ -170,47 +170,47 @@
   <main id="main">
 
   <!-- ============ HERO ============ -->
-  <section id="top" class="relative min-h-[92svh] flex items-center pt-28 pb-10">
+  <section id="top" class="relative min-h-[72svh] flex items-center pt-32 pb-12">
     <div class="mx-auto max-w-screen-2xl px-8 lg:px-16 w-full text-center">
       <div class="mx-auto max-w-5xl">
-        <div class="hero-eyebrow inline-flex items-center gap-2 rounded-full border border-brand-600/20 bg-white/70 px-3 py-1 text-xs font-medium text-slate-700 mb-6 backdrop-blur">
+        <div class="hero-eyebrow inline-flex items-center gap-2 rounded-full border border-brand-600/20 bg-white/70 px-4 py-1.5 text-sm font-medium text-slate-700 mb-6 backdrop-blur">
           <span class="w-1.5 h-1.5 rounded-full bg-accent-500 animate-pulse"></span>
           Low-Cost Industry 4.0 · Custom-Built For Your Factory
         </div>
         <h1 class="hero-title text-5xl md:text-6xl xl:text-7xl font-black tracking-tight leading-[1.05] text-slate-900 mb-6 lg:whitespace-nowrap">
           We <span id="hero-rotator" class="hero-gradient-text bg-gradient-to-r from-brand-600 via-brand-500 to-accent-500 bg-clip-text text-transparent">digitise</span> your factory.
         </h1>
-        <p class="hero-sub mx-auto max-w-3xl text-lg md:text-xl text-slate-600 mb-8 leading-relaxed">
+        <p class="hero-sub mx-auto max-w-3xl text-xl md:text-2xl text-slate-600 mb-8 leading-relaxed">
           We don't sell boxed software. We walk your floor, understand how your
           plant actually runs, and build the exact system it needs:
           <span class="font-semibold text-slate-900">deployed in weeks, not years.</span>
         </p>
         <div class="hero-cta flex flex-wrap items-center justify-center gap-3">
-          <a href="/contact.html" class="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-brand-600 to-brand-500 hover:from-brand-700 hover:to-brand-600 px-5 py-3 text-sm font-bold text-white shadow-xl shadow-brand-600/40 ring-1 ring-white/20 transition">
+          <a href="/contact.html" class="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-brand-600 to-brand-500 hover:from-brand-700 hover:to-brand-600 px-6 py-3.5 text-base font-bold text-white shadow-xl shadow-brand-600/40 ring-1 ring-white/20 transition">
             Book a 30-min demo
             <svg viewBox="0 0 24 24" fill="none" class="w-4 h-4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
           </a>
-          <a href="#platform" class="inline-flex items-center gap-2 rounded-full border border-slate-300 hover:border-brand-600/40 bg-white hover:bg-white/80 px-5 py-3 text-sm font-semibold text-slate-700 hover:text-slate-900 shadow-sm transition">
+          <a href="#platform" class="inline-flex items-center gap-2 rounded-full border border-slate-300 hover:border-brand-600/40 bg-white hover:bg-white/80 px-6 py-3.5 text-base font-semibold text-slate-700 hover:text-slate-900 shadow-sm transition">
             See what we build
           </a>
         </div>
 
         <div class="hero-stats mt-12 mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl">
           <div>
-            <div class="text-2xl md:text-3xl font-bold text-slate-900 tabular-nums" data-counter="100" data-counter-suffix="%">0</div>
-            <div class="text-xs uppercase tracking-wider text-slate-500 mt-1">Real-time ledger</div>
+            <div class="text-3xl md:text-4xl font-bold text-slate-900 tabular-nums" data-counter="100" data-counter-suffix="%">0</div>
+            <div class="text-sm uppercase tracking-wider text-slate-500 mt-1">Real-time ledger</div>
           </div>
           <div>
-            <div class="text-2xl md:text-3xl font-bold text-slate-900 tabular-nums" data-counter="14" data-counter-suffix=" wks">0</div>
-            <div class="text-xs uppercase tracking-wider text-slate-500 mt-1">Typical deploy</div>
+            <div class="text-3xl md:text-4xl font-bold text-slate-900 tabular-nums" data-counter="14" data-counter-suffix=" wks">0</div>
+            <div class="text-sm uppercase tracking-wider text-slate-500 mt-1">Typical deploy</div>
           </div>
           <div>
-            <div class="text-2xl md:text-3xl font-bold text-slate-900 tabular-nums" data-counter="99" data-counter-suffix="%">0</div>
-            <div class="text-xs uppercase tracking-wider text-slate-500 mt-1">Backend uptime</div>
+            <div class="text-3xl md:text-4xl font-bold text-slate-900 tabular-nums" data-counter="99" data-counter-suffix="%">0</div>
+            <div class="text-sm uppercase tracking-wider text-slate-500 mt-1">Backend uptime</div>
           </div>
           <div>
-            <div class="text-2xl md:text-3xl font-bold text-slate-900 tabular-nums" data-counter="2" data-counter-suffix=" apps">0</div>
-            <div class="text-xs uppercase tracking-wider text-slate-500 mt-1">Web + mobile</div>
+            <div class="text-3xl md:text-4xl font-bold text-slate-900 tabular-nums" data-counter="2" data-counter-suffix=" apps">0</div>
+            <div class="text-sm uppercase tracking-wider text-slate-500 mt-1">Web + mobile</div>
           </div>
         </div>
       </div>
