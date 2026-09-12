@@ -3,39 +3,39 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vintract — Industry 4.0 SaaS for the modern factory</title>
-  <meta name="description" content="Vintract is an Industry 4.0 SaaS platform for SMB manufacturers — live material tracking via per-station Raspberry Pis, BOM-driven production planning, vendor + waste analytics, and an AI-native mobile + web app." />
+  <title>Vintract | We Digitise Your Factory. Low-Cost Industry 4.0</title>
+  <meta name="description" content="Vintract Tech Systems Private Limited builds low-cost Industry 4.0 and industrial automation systems, custom-made for each factory: ERP, IoT material tracking, TPM autonomous maintenance check sheets. We understand your process first, then build around it. Clients include Hyundai Transys India." />
   <meta name="theme-color" content="#f8fafc" />
   <link rel="canonical" href="https://vintract.com/" />
 
   <!-- Open Graph + Twitter -->
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Vintract" />
-  <meta property="og:title" content="Vintract — Industry 4.0 SaaS for the modern factory" />
-  <meta property="og:description" content="Live material tracking, BOM-driven planning, IoT and an AI-native mobile + web app. Built for SMB manufacturers." />
+  <meta property="og:title" content="Vintract | We Digitise Your Factory. Low-Cost Industry 4.0" />
+  <meta property="og:description" content="We understand how your plant runs, then build the exact system it needs: ERP, IoT tracking, TPM check sheets, mobile apps. Deployed in weeks." />
   <meta property="og:url" content="https://vintract.com/" />
   <meta property="og:image" content="https://vintract.com/assets/og.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Vintract — Industry 4.0 SaaS for the modern factory" />
-  <meta name="twitter:description" content="Live material tracking, BOM-driven planning, IoT and an AI-native app for SMB manufacturers." />
+  <meta name="twitter:title" content="Vintract | We Digitise Your Factory. Low-Cost Industry 4.0" />
+  <meta name="twitter:description" content="We understand how your plant runs, then build the exact system it needs. Deployed in weeks, not years." />
   <meta name="twitter:image" content="https://vintract.com/assets/og.png" />
 
-  <!-- Favicon set — Vintract V-mark. PNGs at multiple sizes so browsers pick the sharpest. -->
+  <!-- Favicon set. Vintract V-mark PNGs at multiple sizes so browsers pick the sharpest. -->
   <link rel="icon" type="image/x-icon" href="/assets/favicon-v3.ico" />
   <link rel="icon" type="image/png" sizes="192x192" href="/assets/vintract-mark-v3.png" />
   <link rel="icon" type="image/png" sizes="512x512" href="/assets/vintract-mark-512-v3.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/vintract-mark-v3.png" />
 
-  <!-- Fonts — preconnect for the LCP -->
+  <!-- Fonts: preconnect for the LCP -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
 
   <!-- Compiled Tailwind. Lean static CSS, no CDN runtime.
-       ?v query is a cache-buster — bump on every CSS rebuild. -->
-  <link rel="stylesheet" href="/css/main.css?v=20260615a" />
+       ?v query is a cache-buster. Bump on every CSS rebuild. -->
+  <link rel="stylesheet" href="/css/main.css?v=20260912c" />
 
   <!-- GSAP for scroll animations. Async / defer to keep LCP clean. -->
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
@@ -43,22 +43,38 @@
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/MotionPathPlugin.min.js"></script>
   <script defer src="/js/main.js"></script>
 
-  <!-- Plausible — privacy-friendly, cookieless, GDPR/DPDP compliant. -->
+  <!-- Plausible: privacy-friendly, cookieless, GDPR/DPDP compliant. -->
   <script defer data-domain="vintract.com" src="https://plausible.io/js/script.js"></script>
 
-  <!-- Structured data — helps Google understand who we are. -->
+  <!-- Structured data so Google understands who we are. -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@graph": [
       {
         "@type": "Organization",
+        "@id": "https://vintract.com/#organization",
         "name": "Vintract",
+        "legalName": "Vintract Tech Systems Private Limited",
+        "alternateName": ["Vintract Tech Systems", "Vintract Tech Systems Pvt Ltd"],
         "url": "https://vintract.com",
         "logo": "https://vintract.com/assets/vintract-mark-512-v3.png",
-        "description": "Industry 4.0 SaaS platform for SMB manufacturers — live material tracking, BOM-driven production planning, vendor + waste analytics, AI-native.",
+        "description": "Vintract Tech Systems Private Limited builds custom Industry 4.0 systems for manufacturers. We understand each plant's process and build around it: live material tracking, production planning, TPM check sheets, mobile apps.",
         "founders": [{ "@type": "Person", "name": "Krishna Reddy" }],
         "foundingDate": "2026",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Bengaluru",
+          "addressRegion": "Karnataka",
+          "addressCountry": "IN"
+        },
+        "slogan": "We digitise your factory. Low-cost Industry 4.0.",
+        "knowsAbout": [
+          "Industry 4.0", "industrial automation", "factory ERP",
+          "IoT material tracking", "BOM-driven production planning",
+          "TPM", "Jishu Hozen", "autonomous maintenance check sheets",
+          "face recognition attendance", "shop floor digitisation"
+        ],
         "contactPoint": {
           "@type": "ContactPoint",
           "email": "admin@vintract.com",
@@ -74,6 +90,35 @@
         "operatingSystem": "Web, Android",
         "offers": { "@type": "Offer", "priceCurrency": "INR", "price": "0", "description": "Contact sales for pricing" },
         "description": "Live shop-floor inventory, BOM-driven MRP, IoT scanning via Raspberry Pi, mobile + web apps."
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "Jishu",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web (PWA)",
+        "offers": { "@type": "Offer", "priceCurrency": "INR", "price": "0", "description": "Contact sales for pricing" },
+        "description": "Digital autonomous maintenance (Jishu Hozen / TPM) check sheet platform: QR-scan check sheets at each machine, shift-wise work allotment, abnormality escalation, live plan-versus-actual boards. Deployed at Hyundai Transys India.",
+        "provider": { "@id": "https://vintract.com/#organization" }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What does Industry 4.0 cost for a small factory?",
+            "acceptedAnswer": { "@type": "Answer", "text": "A fraction of an enterprise ERP. Vintract runs on lean cloud infrastructure, you pay only for what we build for your plant, and most deployments go live for less than the annual maintenance fee of a legacy system." }
+          },
+          {
+            "@type": "Question",
+            "name": "Can we start with one workflow instead of a full ERP?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes. Hyundai Transys India started with digital autonomous maintenance check sheets alone. Pick the workflow that hurts most, digitise it, and expand from there." }
+          },
+          {
+            "@type": "Question",
+            "name": "How long does deployment take?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Weeks, not years. A focused workflow ships in about three weeks. A full ERP rollout, including IoT scanning stations, typically lands inside a quarter." }
+          }
+        ]
       }
     ]
   }
@@ -84,14 +129,17 @@
   <!-- Skip-to-content for keyboard / screen-reader users -->
   <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:rounded-md focus:bg-brand-600 focus:px-3 focus:py-2 focus:text-sm focus:font-semibold focus:text-white">Skip to content</a>
 
-  <!-- Animated background grid — fixed, sits behind everything -->
+  <!-- Reading progress, thin gradient bar above the header -->
+  <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
+
+  <!-- Animated background grid, fixed, sits behind everything -->
   <div class="bg-grid" aria-hidden="true">
     <div class="bg-grid__layer bg-grid__layer--lines"></div>
     <div class="bg-grid__layer bg-grid__layer--dots"></div>
     <div class="bg-grid__scan" id="bg-scan"></div>
   </div>
 
-  <!-- Top nav — fully opaque static "shelf". Nothing visible behind it. -->
+  <!-- Top nav: fully opaque static "shelf". Nothing visible behind it. -->
   <header
     style="background-color: #ffffff;"
     class="fixed top-0 left-0 right-0 z-50 border-b border-slate-200 shadow-md shadow-slate-900/5"
@@ -104,6 +152,7 @@
 
       <nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-slate-700" aria-label="Primary">
         <a href="#platform"   class="hover:text-brand-600 transition">Platform</a>
+        <a href="#work"       class="hover:text-brand-600 transition">Work</a>
         <a href="#mobile"     class="hover:text-brand-600 transition">Mobile</a>
         <a href="#apps"       class="hover:text-brand-600 transition">Apps</a>
         <a href="#ai"         class="hover:text-brand-600 transition">AI</a>
@@ -121,34 +170,32 @@
   <main id="main">
 
   <!-- ============ HERO ============ -->
-  <section id="top" class="relative min-h-[100svh] flex items-center pt-28">
-    <div class="mx-auto max-w-screen-2xl px-8 lg:px-16 w-full">
-      <div class="max-w-3xl">
+  <section id="top" class="relative pt-44 pb-20">
+    <div class="mx-auto max-w-screen-2xl px-8 lg:px-16 w-full text-center">
+      <div class="mx-auto max-w-4xl">
         <div class="hero-eyebrow inline-flex items-center gap-2 rounded-full border border-brand-600/20 bg-white/70 px-3 py-1 text-xs font-medium text-slate-700 mb-6 backdrop-blur">
           <span class="w-1.5 h-1.5 rounded-full bg-accent-500 animate-pulse"></span>
-          Industry 4.0 SaaS · Built for SMB manufacturers
+          Low-Cost Industry 4.0 · Custom-Built For Your Factory
         </div>
         <h1 class="hero-title text-5xl md:text-7xl font-black tracking-tight leading-[1.05] text-slate-900 mb-6">
-          Industry 4.0 SaaS<br />
-          for the <span class="bg-gradient-to-r from-brand-600 via-brand-500 to-accent-500 bg-clip-text text-transparent">modern factory</span>.
+          We <span class="hero-gradient-text bg-gradient-to-r from-brand-600 via-brand-500 to-accent-500 bg-clip-text text-transparent">digitise</span> your factory.
         </h1>
-        <p class="hero-sub max-w-2xl text-lg md:text-xl text-slate-600 mb-10 leading-relaxed">
-          One platform that runs the floor and the back office.
-          Per-station IoT devices scan every movement; the cloud reconciles
-          BOM, vendor lead times and waste in real time; operators close production
-          orders from a mobile app — <span class="font-semibold text-slate-900">deployed in weeks, not years.</span>
+        <p class="hero-sub mx-auto max-w-2xl text-lg md:text-xl text-slate-600 mb-8 leading-relaxed">
+          We don't sell boxed software. We walk your floor, understand how your
+          plant actually runs, and build the exact system it needs:
+          <span class="font-semibold text-slate-900">deployed in weeks, not years.</span>
         </p>
-        <div class="hero-cta flex flex-wrap items-center gap-3">
+        <div class="hero-cta flex flex-wrap items-center justify-center gap-3">
           <a href="/contact.html" class="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-brand-600 to-brand-500 hover:from-brand-700 hover:to-brand-600 px-5 py-3 text-sm font-bold text-white shadow-xl shadow-brand-600/40 ring-1 ring-white/20 transition">
             Book a 30-min demo
             <svg viewBox="0 0 24 24" fill="none" class="w-4 h-4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
           </a>
           <a href="#platform" class="inline-flex items-center gap-2 rounded-full border border-slate-300 hover:border-brand-600/40 bg-white hover:bg-white/80 px-5 py-3 text-sm font-semibold text-slate-700 hover:text-slate-900 shadow-sm transition">
-            Explore the platform
+            See what we build
           </a>
         </div>
 
-        <div class="hero-stats mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl">
+        <div class="hero-stats mt-12 mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl">
           <div>
             <div class="text-2xl md:text-3xl font-bold text-slate-900 tabular-nums" data-counter="100" data-counter-suffix="%">0</div>
             <div class="text-xs uppercase tracking-wider text-slate-500 mt-1">Real-time ledger</div>
@@ -168,12 +215,33 @@
         </div>
       </div>
     </div>
-
-    <div class="hero-scroll absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-slate-500 text-xs" aria-hidden="true">
-      <span>Scroll</span>
-      <svg viewBox="0 0 24 24" fill="none" class="w-4 h-4 animate-bounce" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
-    </div>
   </section>
+
+  <!-- ============ CAPABILITIES MARQUEE ============ -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee__track">
+      <div class="marquee__group">
+        <span class="marquee__item">Factory ERP</span>
+        <span class="marquee__item">IoT Material Tracking</span>
+        <span class="marquee__item">BOM-Driven Planning</span>
+        <span class="marquee__item">TPM Check Sheets</span>
+        <span class="marquee__item">Face Attendance</span>
+        <span class="marquee__item">Vendor Analytics</span>
+        <span class="marquee__item">Low-Cost Industry 4.0</span>
+        <span class="marquee__item">Deployed In Weeks</span>
+      </div>
+      <div class="marquee__group">
+        <span class="marquee__item">Factory ERP</span>
+        <span class="marquee__item">IoT Material Tracking</span>
+        <span class="marquee__item">BOM-Driven Planning</span>
+        <span class="marquee__item">TPM Check Sheets</span>
+        <span class="marquee__item">Face Attendance</span>
+        <span class="marquee__item">Vendor Analytics</span>
+        <span class="marquee__item">Low-Cost Industry 4.0</span>
+        <span class="marquee__item">Deployed In Weeks</span>
+      </div>
+    </div>
+  </div>
 
   <!-- ============ MISSION + VISION ============ -->
   <section id="mission" class="relative py-32">
@@ -182,13 +250,14 @@
         <div class="reveal">
           <div class="text-xs uppercase tracking-[0.3em] text-brand-600 mb-4">Mission</div>
           <h2 class="text-3xl md:text-4xl font-bold leading-tight text-slate-900">
-            Bring Industry 4.0 to SMB manufacturers — without an SAP licence.
+            Bring Industry 4.0 to SMB manufacturers, without an SAP licence.
           </h2>
           <p class="mt-6 text-slate-600 leading-relaxed text-lg">
             Mid-sized factories still run on hand-written registers, group chats and
             generic accounting tools. Enterprise ERPs assume a CFO and a six-figure
-            implementation budget. Vintract closes that gap: same operational backbone,
-            one-tenth the price, deployed in weeks not years.
+            implementation budget. Vintract closes that gap with low-cost industrial
+            automation: the same operational backbone at one-tenth the price, deployed
+            in weeks not years.
           </p>
         </div>
         <div class="reveal">
@@ -211,14 +280,14 @@
     <div class="platform-bg" aria-hidden="true"></div>
     <div class="mx-auto max-w-screen-2xl px-8 lg:px-16 relative">
       <div class="max-w-2xl mb-20 reveal">
-        <div class="text-xs uppercase tracking-[0.3em] text-brand-600 mb-4">Platform</div>
+        <div class="text-xs uppercase tracking-[0.3em] text-brand-600 mb-4">What We Build</div>
         <h2 class="text-4xl md:text-5xl font-bold leading-tight text-slate-900">
           The full stack.<br />Floor to forecast.
         </h2>
         <p class="mt-6 text-slate-600 text-lg leading-relaxed">
-          Edge devices on every station, FastAPI backend, Postgres ledger, Next.js web app,
-          React Native mobile, AWS-native infrastructure. One vendor, one bill, one support
-          line.
+          Whatever your plant needs, we build it on a proven stack: edge devices on the
+          stations, FastAPI backend, Postgres ledger, web and mobile apps, AWS-native
+          infrastructure. One team, one bill, one support line.
         </p>
       </div>
 
@@ -244,7 +313,7 @@
             <p class="card__body">
               Per-station Raspberry Pis publish barcode scans to AWS IoT Core; a Lambda
               writes to Postgres in under 500 ms. Stock, traceability and quality events all
-              hit the same ledger — no batch sync, no end-of-day reconciliation.
+              hit the same ledger. No batch sync, no end-of-day reconciliation.
             </p>
             <ul class="card__list">
               <li>Barcode + QR + IoT scans</li>
@@ -260,8 +329,8 @@
             <h3 class="card__title">BOM-driven production</h3>
             <p class="card__body">
               Define products and their bills-of-materials once. Feasibility check explodes
-              the BOM against live stock + vendor lead times before you commit to an order
-              — "100 cookers by Friday: 200 stainless discs short, 21-day lead".
+              the BOM against live stock and vendor lead times before you commit to an order:
+              "100 cookers by Friday? 200 stainless discs short, 21-day lead."
             </p>
             <ul class="card__list">
               <li>Bills of materials with scrap factor</li>
@@ -291,6 +360,63 @@
     </div>
   </section>
 
+  <!-- ============ WORK ============ -->
+  <section id="work" class="relative py-32">
+    <div class="mx-auto max-w-screen-2xl px-8 lg:px-16">
+      <div class="max-w-2xl mb-16 reveal">
+        <div class="text-xs uppercase tracking-[0.3em] text-brand-600 mb-4">Work</div>
+        <h2 class="text-4xl md:text-5xl font-bold leading-tight text-slate-900">
+          Proven on real factory floors.
+        </h2>
+        <p class="mt-6 text-slate-600 text-lg leading-relaxed">
+          Two live deployments, two very different problems. The same team and the same
+          stack, scoped to what the plant actually needs: a complete ERP, or one focused
+          workflow that still lives on paper today.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <article class="card reveal group">
+          <div class="text-xs uppercase tracking-wider text-slate-500 mb-3">Home Appliances · Hosur, Tamil Nadu</div>
+          <h3 class="card__title">Factory ERP + IoT for Motley Appliances</h3>
+          <p class="card__body">
+            The complete operational backbone for an appliance plant: barcode-scanned live
+            inventory, BOM-driven production planning, stage-by-stage floor tracking, HR
+            with face-recognition attendance, vendor and waste analytics. Web dashboard
+            plus operator and employee mobile apps, all running in production.
+          </p>
+          <ul class="card__list">
+            <li>Full ERP Scope, One Vendor</li>
+            <li>Per-Station IoT Scanning</li>
+            <li>Face-Recognition Attendance Kiosk</li>
+          </ul>
+        </article>
+
+        <article class="card reveal group">
+          <div class="text-xs uppercase tracking-wider text-slate-500 mb-3">Automotive · Andhra Pradesh</div>
+          <h3 class="card__title">Jishu Hozen check sheets for Hyundai Transys India</h3>
+          <p class="card__body">
+            Digital autonomous maintenance (TPM) for an automotive components plant.
+            Operators scan a QR code at the machine, run guided check sheets with photo
+            evidence, and out-of-range readings raise abnormalities with an automatic
+            escalation chain. Live plan-versus-actual boards for every shift, in English
+            and Telugu.
+          </p>
+          <ul class="card__list">
+            <li>Go-Live In Three Weeks</li>
+            <li>QR Check Sheets, Selfie-Verified Tasks</li>
+            <li>Automatic Abnormality Escalation</li>
+          </ul>
+        </article>
+      </div>
+
+      <p class="mt-10 text-slate-600 reveal">
+        Have a workflow that still runs on paper or WhatsApp?
+        <a href="/contact.html" class="font-semibold text-brand-600 hover:text-brand-700">Tell us about it</a>.
+      </p>
+    </div>
+  </section>
+
   <!-- ============ MOBILE APP ============ -->
   <section id="mobile" class="relative py-32 bg-white/40 border-y border-slate-200">
     <div class="mx-auto max-w-screen-2xl px-8 lg:px-16">
@@ -308,7 +434,7 @@
           <ul class="mt-8 space-y-3 text-slate-700">
             <li class="flex items-start gap-3">
               <span class="mt-1 w-2 h-2 rounded-full bg-gradient-to-r from-brand-500 to-accent-500 shrink-0"></span>
-              <span>Scan an SKU — see live stock, vendor, threshold, history.</span>
+              <span>Scan an SKU and see live stock, vendor, threshold, history.</span>
             </li>
             <li class="flex items-start gap-3">
               <span class="mt-1 w-2 h-2 rounded-full bg-gradient-to-r from-brand-500 to-accent-500 shrink-0"></span>
@@ -320,7 +446,7 @@
             </li>
             <li class="flex items-start gap-3">
               <span class="mt-1 w-2 h-2 rounded-full bg-gradient-to-r from-brand-500 to-accent-500 shrink-0"></span>
-              <span>Waste log with reason picker — automatically decrements stock.</span>
+              <span>Waste log with reason picker that automatically decrements stock.</span>
             </li>
           </ul>
 
@@ -358,7 +484,7 @@
               </div>
             </a>
 
-            <!-- App Store (iOS — coming soon) -->
+            <!-- App Store (iOS, coming soon) -->
             <a
               href="mailto:admin@vintract.com?subject=Notify%20me%20when%20the%20iOS%20app%20is%20ready"
               class="group inline-flex items-center gap-3 rounded-xl border border-white/15 bg-black/70 hover:bg-black px-4 py-2.5 transition shadow-lg shadow-brand-700/20 ring-1 ring-white/5"
@@ -436,7 +562,7 @@
               <span class="ai-terminal__dot ai-terminal__dot--red"></span>
               <span class="ai-terminal__dot ai-terminal__dot--yellow"></span>
               <span class="ai-terminal__dot ai-terminal__dot--green"></span>
-              <span class="ai-terminal__title">vintract-ai — night shift</span>
+              <span class="ai-terminal__title">vintract-ai · night shift</span>
             </div>
             <div class="ai-terminal__body font-mono text-sm">
               <div class="ai-terminal__line">
@@ -491,14 +617,53 @@
     </div>
   </section>
 
+  <!-- ============ FAQ ============ -->
+  <section id="faq" class="relative py-24">
+    <div class="mx-auto max-w-screen-2xl px-8 lg:px-16">
+      <div class="max-w-2xl mb-12 reveal">
+        <div class="text-xs uppercase tracking-[0.3em] text-brand-600 mb-4">FAQ</div>
+        <h2 class="text-3xl md:text-4xl font-bold leading-tight text-slate-900">
+          Straight answers.
+        </h2>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="card reveal">
+          <h3 class="card__title text-lg">What does Industry 4.0 cost for a small factory?</h3>
+          <p class="card__body mt-3">
+            A fraction of an enterprise ERP. Vintract runs on lean cloud infrastructure,
+            you pay only for what we build for your plant, and most deployments go live for less
+            than the annual maintenance fee of a legacy system. Ask us for a quote
+            sized to your plant.
+          </p>
+        </div>
+        <div class="card reveal">
+          <h3 class="card__title text-lg">Can we start with one workflow instead of a full ERP?</h3>
+          <p class="card__body mt-3">
+            Yes. Hyundai Transys India started with digital autonomous maintenance check
+            sheets alone. Pick the workflow that hurts most, digitise it, and expand only
+            if it earns its keep.
+          </p>
+        </div>
+        <div class="card reveal">
+          <h3 class="card__title text-lg">How long does deployment take?</h3>
+          <p class="card__body mt-3">
+            Weeks, not years. A focused workflow ships in about three weeks. A full
+            ERP rollout, including IoT scanning stations on the floor, typically lands
+            inside a quarter.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ============ GET THE APPS ============ -->
   <section id="apps" class="relative py-32 border-y border-slate-200 bg-white/50">
     <div class="mx-auto max-w-screen-2xl px-8 lg:px-16">
       <div class="text-center mb-12 reveal">
         <div class="text-xs uppercase tracking-[0.3em] text-slate-500 mb-4">Get the apps</div>
-        <h2 class="text-3xl md:text-4xl font-bold leading-tight text-slate-900">Three apps. One platform.</h2>
+        <h2 class="text-3xl md:text-4xl font-bold leading-tight text-slate-900">Three apps. One system.</h2>
         <p class="mt-4 text-slate-600 max-w-2xl mx-auto">
-          A purpose-built surface for every person on the floor — the gate, the store, and the team.
+          A purpose-built surface for every person on the floor: the gate, the store, and the team.
         </p>
       </div>
 
@@ -526,7 +691,7 @@
             <svg viewBox="0 0 24 24" fill="none" class="w-6 h-6 text-violet-600" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
           </div>
           <h3 class="text-lg font-bold text-slate-900">Vintract Ops</h3>
-          <p class="mt-1.5 text-sm text-slate-600 flex-1">The operator app — scan barcodes to receive stock, move material to the floor, and run production, right from a phone.</p>
+          <p class="mt-1.5 text-sm text-slate-600 flex-1">The operator app. Scan barcodes to receive stock, move material to the floor, and run production, right from a phone.</p>
           <!-- SWAP: replace href with the Google Play URL + badge once published -->
           <a href="https://vintract-app-downloads-prod-764416828771.s3.ap-south-1.amazonaws.com/mobile/vintract-mobile-latest.apk"
              class="mt-5 inline-flex items-center justify-center gap-2 rounded-md bg-violet-600 hover:bg-violet-700 px-4 py-2.5 text-sm font-semibold text-white transition">
@@ -542,7 +707,7 @@
             <svg viewBox="0 0 24 24" fill="none" class="w-6 h-6 text-sky-600" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
           </div>
           <h3 class="text-lg font-bold text-slate-900">Vintract People</h3>
-          <p class="mt-1.5 text-sm text-slate-600 flex-1">Employee self-service on your own phone — your attendance, payslips, documents and profile. Punching stays at the factory kiosk.</p>
+          <p class="mt-1.5 text-sm text-slate-600 flex-1">Employee self-service on your own phone: your attendance, payslips, documents and profile. Punching stays at the factory kiosk.</p>
           <!-- SWAP: replace href with the Google Play URL + badge once published -->
           <a href="https://vintract-app-downloads-prod-764416828771.s3.ap-south-1.amazonaws.com/people/vintract-people-latest.apk"
              class="mt-5 inline-flex items-center justify-center gap-2 rounded-md bg-sky-600 hover:bg-sky-700 px-4 py-2.5 text-sm font-semibold text-white transition">
@@ -568,7 +733,7 @@
           Let's wire up your factory.
         </h2>
         <p class="mt-6 text-slate-600 text-lg max-w-2xl mx-auto">
-          30-minute walkthrough of the platform, then a scoping call for your floor.
+          30-minute walkthrough of live systems, then a scoping call for your floor.
           Typical deployment is 8–14 weeks from kickoff to first scan.
         </p>
       </div>
@@ -619,12 +784,12 @@
             <span class="font-bold tracking-tight text-slate-900">vintract</span>
           </div>
           <p class="text-sm text-slate-600 max-w-md leading-relaxed">
-            Industry 4.0 SaaS platform for SMB manufacturers.
-            Live scan-driven inventory, BOM-driven production planning, mobile + web apps,
-            AI-native. Hosted on AWS.
+            Custom Industry 4.0 systems for manufacturers. We understand how your
+            factory runs and build its software around it: inventory, production,
+            IoT scanning, mobile apps. Hosted on AWS, supported by one team.
           </p>
           <div class="mt-5 text-xs text-slate-500 leading-relaxed">
-            Vintract Technologies<br />
+            Vintract Tech Systems Private Limited<br />
             Bengaluru, Karnataka, India
           </div>
         </div>
@@ -652,7 +817,7 @@
       </div>
 
       <div class="border-t border-slate-200 pt-6 flex flex-wrap items-center justify-between gap-4 text-xs text-slate-500">
-        <div>&copy; 2026 Vintract Technologies. Made in India.</div>
+        <div>&copy; 2026 Vintract Tech Systems Private Limited. Made in India.</div>
         <div class="flex items-center gap-4">
           <span class="inline-flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-accent-500"></span>All systems operational</span>
         </div>

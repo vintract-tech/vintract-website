@@ -4,7 +4,7 @@
   "workspaces": [
     {
       "code": "motley-hsr",
-      "name": "Motley Cookers — Hosur",
+      "name": "Motley Cookers, Hosur",
       "api_base": "https://api.motley-hsr.vintract.com",
       "web_base": "https://motley-hsr.vintract.com",
       "country": "IN",

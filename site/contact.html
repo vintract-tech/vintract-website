@@ -3,13 +3,13 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Book a demo — Vintract</title>
-  <meta name="description" content="Book a 30-minute live demo of the Vintract Industry 4.0 platform plus a scoping call for your factory floor." />
+  <title>Book a Demo | Vintract</title>
+  <meta name="description" content="Book a 30-minute live demo of systems Vintract has built, plus a scoping call for your own factory floor." />
   <meta name="theme-color" content="#f8fafc" />
   <link rel="canonical" href="https://vintract.com/contact.html" />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Book a demo — Vintract" />
-  <meta property="og:description" content="30-min walkthrough of the platform + scoping for your factory floor." />
+  <meta property="og:title" content="Book a Demo | Vintract" />
+  <meta property="og:description" content="30-min walkthrough of live systems + scoping for your factory floor." />
   <meta property="og:url" content="https://vintract.com/contact.html" />
   <meta property="og:image" content="https://vintract.com/assets/og.png" />
   <meta name="twitter:card" content="summary_large_image" />
@@ -21,7 +21,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/css/main.css?v=20260615a" />
+  <link rel="stylesheet" href="/css/main.css?v=20260912c" />
 
   <script defer data-domain="vintract.com" src="https://plausible.io/js/script.js"></script>
 </head>
@@ -71,7 +71,7 @@
             Let's wire up your factory.
           </h1>
           <p class="text-lg text-slate-600 leading-relaxed mb-10">
-            30-minute walkthrough of the platform, followed by a scoping call for your floor.
+            30-minute walkthrough of live systems we have built, followed by a scoping call for your floor.
             We'll talk SKUs, stations, lead times, and what production data you'd want answered
             in real time.
           </p>
@@ -179,7 +179,7 @@
               </label>
             </div>
 
-            <!-- Section 2: free-text message — full width, label clearly above -->
+            <!-- Section 2: free-text message, full width, label clearly above -->
             <div class="mt-6">
               <label for="f-message" class="form-label">
                 Anything we should know before the call?
@@ -199,7 +199,7 @@
             </div>
 
             <div id="f-success" class="hidden mt-6 rounded-xl border border-accent-500/40 bg-accent-500/10 px-4 py-3 text-sm text-emerald-700">
-              ✓ Thanks — we'll reach out within one business day. Check your email for our reply.
+              ✓ Thanks. We'll reach out within one business day. Check your email for our reply.
             </div>
             <div id="f-error" class="hidden mt-6 rounded-xl border border-rose-300 bg-rose-50 px-4 py-3 text-sm text-rose-700">
               Couldn't submit just now. Email us at <a href="mailto:admin@vintract.com" class="underline">admin@vintract.com</a> and we'll pick it up.
@@ -212,7 +212,7 @@
 
   <footer class="relative border-t border-slate-200 bg-slate-100 py-8">
     <div class="mx-auto max-w-screen-2xl px-8 lg:px-16 flex flex-wrap items-center justify-between gap-3 text-xs text-slate-500">
-      <div>&copy; 2026 Vintract Technologies. Made in India.</div>
+      <div>&copy; 2026 Vintract Tech Systems Private Limited. Made in India.</div>
       <div class="flex items-center gap-4">
         <a href="/" class="hover:text-brand-600">Home</a>
         <a href="/privacy.html" class="hover:text-brand-600">Privacy</a>
@@ -250,7 +250,7 @@
             size:     document.getElementById("f-size").value,
             message:  document.getElementById("f-message").value.trim(),
           };
-          const subject = `Demo request — ${data.company || data.name}`;
+          const subject = `Demo request from ${data.company || data.name}`;
           const body =
             `Demo request from the Vintract website.\n\n` +
             `Name:     ${data.name}\n` +
@@ -259,7 +259,7 @@
             `Company:  ${data.company}\n` +
             `Industry: ${data.industry}\n` +
             `Size:     ${data.size}\n\n` +
-            `Message:\n${data.message || "—"}\n`;
+            `Message:\n${data.message || "-"}\n`;
           const href =
             `mailto:admin@vintract.com` +
             `?subject=${encodeURIComponent(subject)}` +

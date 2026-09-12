@@ -1,4 +1,4 @@
-/* Vintract marketing — scroll-driven animations using GSAP + ScrollTrigger.
+/* Vintract marketing site: scroll-driven animations using GSAP + ScrollTrigger.
  *
  * Design intent: nothing flashy that distracts from copy. Sections fade up,
  * the background grid drifts in parallax, a soft scan line follows the
@@ -11,7 +11,7 @@
   // Fallback: if GSAP/ScrollTrigger didn't load (slow mobile network,
   // content blocker, CDN hiccup), the .reveal blocks would stay at
   // opacity:0 and the whole page would look blank. Force everything
-  // visible and bail — static page, no animation, but fully usable.
+  // visible and bail: static page, no animation, but fully usable.
   if (!window.gsap || !window.ScrollTrigger) {
     document.querySelectorAll(".reveal, .hero-eyebrow, .hero-title, .hero-sub, .hero-cta, .hero-stats")
       .forEach((el) => { el.style.opacity = "1"; el.style.transform = "none"; });
@@ -36,7 +36,39 @@
       scrollTrigger: { trigger: document.body, start: "top top", end: "bottom bottom", scrub: 0.5 },
     });
 
-    // Scan line tracks scroll position — feels like a sensor sweeping
+    // Aurora rides the scroll: drifts upward and slowly shifts hue from
+    // violet toward teal over the length of the page. The CSS keyframe
+    // drift keeps running underneath for idle motion.
+    gsap.to(".bg-grid", {
+      "--bg-shift": -120,
+      "--bg-hue": 40,
+      ease: "none",
+      scrollTrigger: { trigger: document.body, start: "top top", end: "bottom bottom", scrub: 1 },
+    });
+
+    // Reading progress bar above the header.
+    const progress = document.getElementById("scroll-progress");
+    if (progress) {
+      gsap.to(progress, {
+        scaleX: 1,
+        ease: "none",
+        scrollTrigger: { trigger: document.body, start: "top top", end: "bottom bottom", scrub: 0.3 },
+      });
+    }
+
+    // Hero eases up and fades as the visitor scrolls past it. Cheap
+    // depth cue that makes the page feel layered.
+    const heroInner = document.querySelector("#top > div");
+    if (heroInner) {
+      gsap.to(heroInner, {
+        yPercent: -12,
+        opacity: 0.25,
+        ease: "none",
+        scrollTrigger: { trigger: "#top", start: "top top", end: "bottom top", scrub: 0.6 },
+      });
+    }
+
+    // Scan line tracks scroll position. Feels like a sensor sweeping
     // down the document as the visitor reads.
     const scan = document.getElementById("bg-scan");
     if (scan) {
@@ -49,29 +81,73 @@
   }
 
   // -------- Hero entrance: stagger eyebrow / title / sub / CTA / stats --------
+  // The title additionally splits into words that rise out of an overflow
+  // mask, one after another. Split runs only when animating; screen readers
+  // and reduced-motion users get the untouched text.
+  function splitTitleWords(title) {
+    const words = [];
+    title.childNodes.forEach((node) => {
+      if (node.nodeType === Node.TEXT_NODE) {
+        const frag = document.createDocumentFragment();
+        node.textContent.split(/(\s+)/).forEach((part) => {
+          if (!part) return;
+          if (/^\s+$/.test(part)) { frag.appendChild(document.createTextNode(part)); return; }
+          const mask = document.createElement("span");
+          mask.className = "word-mask";
+          const word = document.createElement("span");
+          word.className = "word";
+          word.textContent = part;
+          mask.appendChild(word);
+          frag.appendChild(mask);
+          words.push(word);
+        });
+        title.replaceChild(frag, node);
+      } else if (node.nodeType === Node.ELEMENT_NODE && node.tagName !== "BR") {
+        const mask = document.createElement("span");
+        mask.className = "word-mask";
+        title.replaceChild(mask, node);
+        mask.appendChild(node);
+        node.classList.add("word");
+        words.push(node);
+      }
+    });
+    return words;
+  }
+
   const heroParts = [
     ".hero-eyebrow",
-    ".hero-title",
     ".hero-sub",
     ".hero-cta",
     ".hero-stats",
   ];
   if (!reducedMotion) {
+    const title = document.querySelector(".hero-title");
+    const words = title ? splitTitleWords(title) : [];
     gsap.set(heroParts, { opacity: 0, y: 24 });
+    if (words.length) {
+      gsap.set(words, { yPercent: 110 });
+      gsap.to(words, {
+        yPercent: 0,
+        duration: 0.8,
+        ease: "power3.out",
+        stagger: 0.07,
+        delay: 0.15,
+      });
+    }
     gsap.to(heroParts, {
       opacity: 1,
       y: 0,
       duration: 0.9,
       ease: "power3.out",
       stagger: 0.12,
-      delay: 0.15,
+      delay: 0.45,
     });
   } else {
-    gsap.set(heroParts, { opacity: 1, y: 0 });
+    gsap.set(heroParts.concat([".hero-title"]), { opacity: 1, y: 0 });
   }
 
   // -------- Hero title gradient shimmer (always on, very subtle) --------
-  // Implemented via CSS animation if we add one — left out for now to keep
+  // Implemented via CSS animation if we add one. Left out for now to keep
   // motion budget low. The gradient text already reads well static.
 
   // -------- Reveal-on-scroll for any .reveal block --------
@@ -231,6 +307,26 @@
     window.addEventListener("resize", () => {
       pathLength = updateConnectorPath();
       connectorPath.style.strokeDasharray = pathLength;
+    });
+  }
+
+  // -------- 3D tilt on cards, desktop pointers only --------
+  // GSAP owns every transform on the cards (entrance + tilt), so the two
+  // never fight over the inline style.
+  const finePointer = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+  if (finePointer && !reducedMotion) {
+    document.querySelectorAll(".card").forEach((card) => {
+      const rx = gsap.quickTo(card, "rotationX", { duration: 0.4, ease: "power2.out" });
+      const ry = gsap.quickTo(card, "rotationY", { duration: 0.4, ease: "power2.out" });
+      gsap.set(card, { transformPerspective: 900 });
+      card.addEventListener("pointermove", (e) => {
+        const r = card.getBoundingClientRect();
+        const px = (e.clientX - r.left) / r.width - 0.5;
+        const py = (e.clientY - r.top) / r.height - 0.5;
+        rx(py * -6);
+        ry(px * 6);
+      });
+      card.addEventListener("pointerleave", () => { rx(0); ry(0); });
     });
   }
 

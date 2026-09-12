@@ -3,13 +3,17 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ============ animated background — soft pastel aurora on white ============ */
+/* ============ animated background: soft pastel aurora on white ============ */
 .bg-grid {
   position: fixed;
   inset: 0;
-  z-index: -1;          /* pinned below the page entirely — header always above */
+  z-index: -1;          /* pinned below the page entirely, header always above */
   pointer-events: none;
   overflow: hidden;
+  /* JS scrubs these two as the page scrolls; CSS keyframes below add a slow
+     ambient drift on top so the background is alive even when idle. */
+  --bg-shift: 0;
+  --bg-hue: 0;
 }
 .bg-grid::before {
   content: "";
@@ -20,8 +24,17 @@
     radial-gradient(55% 45% at 88% 18%,  rgba(16, 185, 129, 0.20), transparent 65%),
     radial-gradient(50% 40% at 50% 92%,  rgba(124, 58, 237, 0.18), transparent 65%),
     radial-gradient(45% 40% at 95% 80%,  rgba(167, 139, 250, 0.20), transparent 65%);
-  filter: blur(28px);
-  will-change: transform;
+  filter: blur(28px) hue-rotate(calc(var(--bg-hue) * 1deg));
+  transform: translate3d(0, calc(var(--bg-shift) * 1px), 0);
+  animation: auroraDrift 26s ease-in-out infinite alternate;
+  will-change: transform, filter;
+}
+@keyframes auroraDrift {
+  0%   { background-position: 0 0, 0 0, 0 0, 0 0; scale: 1; }
+  100% { background-position: 4% -3%, -3% 4%, 2% -2%, -4% 2%; scale: 1.06; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .bg-grid::before { animation: none; }
 }
 .bg-grid__layer {
   position: absolute;
@@ -386,6 +399,97 @@ textarea.form-input { resize: vertical; min-height: 110px; }
   section { padding-top: 3.5rem !important; padding-bottom: 3.5rem !important; }
   /* Guarantee comfortable tap targets for any in-card button/link. */
   .card a[href] { min-height: 44px; }
+}
+
+/* ============ scroll progress bar ============ */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 100%;
+  z-index: 60;            /* above the fixed header */
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  background: linear-gradient(90deg, #7c3aed, #8b5cf6 45%, #10b981);
+  box-shadow: 0 0 12px rgba(124, 58, 237, 0.45);
+  pointer-events: none;
+}
+
+/* ============ hero headline shimmer ============ */
+.hero-gradient-text {
+  background-size: 220% 100%;
+  animation: heroShimmer 7s ease-in-out infinite;
+}
+@keyframes heroShimmer {
+  0%, 100% { background-position: 0% 50%; }
+  50%      { background-position: 100% 50%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-gradient-text { animation: none; }
+}
+
+/* Word-split entrance: JS wraps each hero-title word in a span. Overflow
+   hidden on the wrapper makes them rise out of a mask. */
+.hero-title .word-mask {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: bottom;
+}
+.hero-title .word {
+  display: inline-block;
+  will-change: transform;
+}
+
+/* ============ capabilities marquee ============ */
+.marquee {
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid rgba(124, 58, 237, 0.10);
+  border-bottom: 1px solid rgba(124, 58, 237, 0.10);
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(6px);
+  -webkit-mask-image: linear-gradient(90deg, transparent, black 8%, black 92%, transparent);
+          mask-image: linear-gradient(90deg, transparent, black 8%, black 92%, transparent);
+}
+.marquee__track {
+  display: flex;
+  width: max-content;
+  gap: 0;
+  animation: marqueeScroll 36s linear infinite;
+}
+.marquee:hover .marquee__track { animation-play-state: paused; }
+.marquee__group {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding: 14px 20px;
+  white-space: nowrap;
+}
+.marquee__item {
+  display: inline-flex;
+  align-items: center;
+  gap: 40px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgb(71, 85, 105);
+}
+.marquee__item::after {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 9999px;
+  background: linear-gradient(135deg, #8b5cf6, #10b981);
+  flex-shrink: 0;
+}
+@keyframes marqueeScroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }   /* track holds two identical groups */
+}
+@media (prefers-reduced-motion: reduce) {
+  .marquee__track { animation: none; }
 }
 
 /* Safety net: if JS is disabled entirely (no GSAP path runs at all),
