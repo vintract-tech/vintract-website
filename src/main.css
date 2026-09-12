@@ -322,7 +322,7 @@ body > footer {
 /* ============ smooth scroll, account for fixed nav ============ */
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 96px;
+  scroll-padding-top: 64px;
 }
 
 /* ============ contact form ============ */
