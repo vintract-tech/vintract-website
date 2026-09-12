@@ -35,13 +35,13 @@
 
   <!-- Compiled Tailwind. Lean static CSS, no CDN runtime.
        ?v query is a cache-buster. Bump on every CSS rebuild. -->
-  <link rel="stylesheet" href="/css/main.css?v=20260912f" />
+  <link rel="stylesheet" href="/css/main.css?v=20260912g" />
 
   <!-- GSAP for scroll animations. Async / defer to keep LCP clean. -->
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/MotionPathPlugin.min.js"></script>
-  <script defer src="/js/main.js?v=20260912f"></script>
+  <script defer src="/js/main.js?v=20260912g"></script>
 
   <!-- Plausible: privacy-friendly, cookieless, GDPR/DPDP compliant. -->
   <script defer data-domain="vintract.com" src="https://plausible.io/js/script.js"></script>
@@ -167,10 +167,38 @@
     </div>
   </header>
 
+  <!-- ============ CAPABILITIES MARQUEE ============ -->
+  <!-- Rides directly under the fixed header (mt-20 = header height) so
+       the two read as one bar. -->
+  <div class="marquee mt-20" aria-hidden="true">
+    <div class="marquee__track">
+      <div class="marquee__group">
+        <span class="marquee__item">Factory ERP</span>
+        <span class="marquee__item">IoT Material Tracking</span>
+        <span class="marquee__item">BOM-Driven Planning</span>
+        <span class="marquee__item">TPM Check Sheets</span>
+        <span class="marquee__item">Face Attendance</span>
+        <span class="marquee__item">Vendor Analytics</span>
+        <span class="marquee__item">Low-Cost Industry 4.0</span>
+        <span class="marquee__item">Deployed In Weeks</span>
+      </div>
+      <div class="marquee__group">
+        <span class="marquee__item">Factory ERP</span>
+        <span class="marquee__item">IoT Material Tracking</span>
+        <span class="marquee__item">BOM-Driven Planning</span>
+        <span class="marquee__item">TPM Check Sheets</span>
+        <span class="marquee__item">Face Attendance</span>
+        <span class="marquee__item">Vendor Analytics</span>
+        <span class="marquee__item">Low-Cost Industry 4.0</span>
+        <span class="marquee__item">Deployed In Weeks</span>
+      </div>
+    </div>
+  </div>
+
   <main id="main">
 
   <!-- ============ HERO ============ -->
-  <section id="top" class="relative min-h-[72svh] flex items-center pt-32 pb-12">
+  <section id="top" class="relative min-h-[62svh] flex items-center pt-16 pb-12">
     <div class="mx-auto max-w-screen-2xl px-8 lg:px-16 w-full text-center">
       <div class="mx-auto max-w-5xl">
         <div class="hero-eyebrow inline-flex items-center gap-2 rounded-full border border-brand-600/20 bg-white/70 px-4 py-1.5 text-sm font-medium text-slate-700 mb-6 backdrop-blur">
@@ -216,32 +244,6 @@
       </div>
     </div>
   </section>
-
-  <!-- ============ CAPABILITIES MARQUEE ============ -->
-  <div class="marquee" aria-hidden="true">
-    <div class="marquee__track">
-      <div class="marquee__group">
-        <span class="marquee__item">Factory ERP</span>
-        <span class="marquee__item">IoT Material Tracking</span>
-        <span class="marquee__item">BOM-Driven Planning</span>
-        <span class="marquee__item">TPM Check Sheets</span>
-        <span class="marquee__item">Face Attendance</span>
-        <span class="marquee__item">Vendor Analytics</span>
-        <span class="marquee__item">Low-Cost Industry 4.0</span>
-        <span class="marquee__item">Deployed In Weeks</span>
-      </div>
-      <div class="marquee__group">
-        <span class="marquee__item">Factory ERP</span>
-        <span class="marquee__item">IoT Material Tracking</span>
-        <span class="marquee__item">BOM-Driven Planning</span>
-        <span class="marquee__item">TPM Check Sheets</span>
-        <span class="marquee__item">Face Attendance</span>
-        <span class="marquee__item">Vendor Analytics</span>
-        <span class="marquee__item">Low-Cost Industry 4.0</span>
-        <span class="marquee__item">Deployed In Weeks</span>
-      </div>
-    </div>
-  </div>
 
   <!-- ============ MISSION + VISION ============ -->
   <section id="mission" class="relative py-32">

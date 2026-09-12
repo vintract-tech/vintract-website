@@ -445,9 +445,9 @@ textarea.form-input { resize: vertical; min-height: 110px; }
 .marquee {
   position: relative;
   overflow: hidden;
-  border-top: 1px solid rgba(124, 58, 237, 0.10);
+  border-top: 0;
   border-bottom: 1px solid rgba(124, 58, 237, 0.10);
-  background: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(6px);
   -webkit-mask-image: linear-gradient(90deg, transparent, black 8%, black 92%, transparent);
           mask-image: linear-gradient(90deg, transparent, black 8%, black 92%, transparent);
@@ -487,9 +487,6 @@ textarea.form-input { resize: vertical; min-height: 110px; }
 @keyframes marqueeScroll {
   from { transform: translateX(0); }
   to   { transform: translateX(-50%); }   /* track holds two identical groups */
-}
-@media (prefers-reduced-motion: reduce) {
-  .marquee__track { animation: none; }
 }
 
 /* Safety net: if JS is disabled entirely (no GSAP path runs at all),
