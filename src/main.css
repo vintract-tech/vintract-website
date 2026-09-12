@@ -401,9 +401,9 @@ textarea.form-input { resize: vertical; min-height: 110px; }
 }
 @media (min-width: 1800px) {
   html { font-size: 19px; }
-  /* The outer section container is a fixed 1536px utility; give it more
-     room once the screen can afford it. */
-  .max-w-screen-2xl { max-width: 1720px; }
+  /* The outer section container is a fixed 1536px utility; on monitors
+     let it run the full width, the px padding is the only frame. */
+  .max-w-screen-2xl { max-width: 100%; }
 }
 
 /* ============ mobile polish ============ */
