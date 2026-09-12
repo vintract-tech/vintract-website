@@ -73,6 +73,25 @@
   filter: blur(1px);
 }
 
+/* ============ background value trend line ============ */
+.bg-trend {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.bg-trend__line {
+  stroke: rgba(255, 255, 255, 0.9);
+  stroke-width: 3.5;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+  filter: drop-shadow(0 2px 8px rgba(124, 58, 237, 0.22));
+}
+.bg-trend__tip {
+  fill: #ef4444;
+  filter: drop-shadow(0 0 6px rgba(239, 68, 68, 0.5));
+}
+
 body > header,
 body > main,
 body > section,
