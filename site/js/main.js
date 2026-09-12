@@ -137,22 +137,85 @@
   // the red tip riding its end. Scroll-driven (not autonomous), so it
   // runs regardless of the OS reduced-motion setting; without it the
   // line sat fully drawn and the tip never left the corner.
+  const trendSvg = document.querySelector(".bg-trend");
   const trendLine = document.getElementById("bg-trend-line");
   const trendTip = document.getElementById("bg-trend-tip");
-  if (trendLine && trendTip && window.MotionPathPlugin) {
-    const len = trendLine.getTotalLength();
-    trendLine.style.strokeDasharray = len;
-    trendLine.style.strokeDashoffset = len;
-    gsap.to(trendLine, {
-      strokeDashoffset: 0,
-      ease: "none",
-      scrollTrigger: { trigger: document.body, start: "top top", end: "bottom bottom", scrub: 0.4 },
+  const introTip = document.getElementById("bg-trend-tip-intro");
+  if (trendSvg && trendLine && trendTip && window.MotionPathPlugin) {
+    // The path is generated from the real viewport, so the final stop is
+    // always just under the header border, aimed at the Book a demo
+    // button, whatever the window size.
+    function buildTrendPath() {
+      const W = window.innerWidth;
+      const H = window.innerHeight;
+      trendSvg.setAttribute("viewBox", "0 0 " + W + " " + H);
+      const header = document.querySelector("header");
+      // Two /contact.html links live in the header (nav item + CTA);
+      // the CTA button is the last one.
+      const links = header ? header.querySelectorAll('a[href="/contact.html"]') : [];
+      const btn = links.length ? links[links.length - 1] : null;
+      const stopY = (header ? header.getBoundingClientRect().bottom : 60) + 26;
+      const stopX = btn
+        ? btn.getBoundingClientRect().left + btn.getBoundingClientRect().width / 2
+        : W * 0.92;
+      const pts = [
+        [-0.03, 0.97], [0.10, 0.84], [0.20, 0.89], [0.33, 0.71], [0.45, 0.77],
+        [0.58, 0.56], [0.70, 0.62], [0.83, 0.41], [0.90, 0.47],
+      ].map(function (f) { return [f[0] * W, f[1] * H]; });
+      pts.push([stopX, stopY]);
+      trendLine.setAttribute("d", "M " + pts.map(function (p) {
+        return p[0].toFixed(1) + " " + p[1].toFixed(1);
+      }).join(" L "));
+      return trendLine.getTotalLength();
+    }
+
+    let drawTween = null;
+    let tipTween = null;
+    function initTrend() {
+      if (drawTween) { drawTween.scrollTrigger.kill(); drawTween.kill(); }
+      if (tipTween) { tipTween.scrollTrigger.kill(); tipTween.kill(); }
+      const len = buildTrendPath();
+      trendLine.style.strokeDasharray = len;
+      trendLine.style.strokeDashoffset = len;
+      drawTween = gsap.to(trendLine, {
+        strokeDashoffset: 0,
+        ease: "none",
+        scrollTrigger: { trigger: document.body, start: "top top", end: "bottom bottom", scrub: 0.4 },
+      });
+      tipTween = gsap.to(trendTip, {
+        motionPath: { path: trendLine, align: trendLine, alignOrigin: [0.5, 0.5], autoRotate: true },
+        ease: "none",
+        scrollTrigger: { trigger: document.body, start: "top top", end: "bottom bottom", scrub: 0.4 },
+      });
+    }
+    initTrend();
+
+    let trendResizeTimer;
+    window.addEventListener("resize", function () {
+      clearTimeout(trendResizeTimer);
+      trendResizeTimer = setTimeout(initTrend, 200);
     });
-    gsap.to(trendTip, {
-      motionPath: { path: trendLine, align: trendLine, alignOrigin: [0.5, 0.5], autoRotate: true },
-      ease: "none",
-      scrollTrigger: { trigger: document.body, start: "top top", end: "bottom bottom", scrub: 0.4 },
-    });
+
+    // Teaser on first load: a copy of the tip sits at the final stop,
+    // pointing at Book a demo, then fades away. Scrolling draws the line
+    // and the real tip arrives at the same spot.
+    if (introTip) {
+      gsap.to(introTip, {
+        motionPath: { path: trendLine, align: trendLine, alignOrigin: [0.5, 0.5], autoRotate: true },
+        duration: 0.01,
+        ease: "none",
+      }).progress(1);
+      // The docked ticker covers the path's final stop at load; drop the
+      // teaser just below it so it is actually visible.
+      const marqueeBar = document.querySelector(".marquee");
+      const headerEl = document.querySelector("header");
+      if (marqueeBar && headerEl) {
+        const delta = marqueeBar.getBoundingClientRect().bottom + 20 -
+          (headerEl.getBoundingClientRect().bottom + 26);
+        if (delta > 0) gsap.set(introTip, { y: "+=" + delta });
+      }
+      gsap.to(introTip, { opacity: 0, duration: 1.6, delay: 2.2, ease: "power2.out" });
+    }
   }
 
   // -------- Hero entrance: stagger eyebrow / title / sub / CTA / stats --------
