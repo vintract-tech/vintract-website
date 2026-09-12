@@ -402,8 +402,8 @@ textarea.form-input { resize: vertical; min-height: 110px; }
 @media (min-width: 1800px) {
   html { font-size: 19px; }
   /* The outer section container is a fixed 1536px utility; on monitors
-     let it run the full width, the px padding is the only frame. */
-  .max-w-screen-2xl { max-width: 100%; }
+     span the width minus a 250px breathing band (125px per side). */
+  .max-w-screen-2xl { max-width: calc(100% - 250px); }
 }
 
 /* ============ mobile polish ============ */
