@@ -219,7 +219,7 @@
         ease: "power3.out",
         scrollTrigger: {
           trigger: el,
-          start: "top 85%",
+          start: "top 94%",
           toggleActions: "play none none reverse",
         },
       },

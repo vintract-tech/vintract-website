@@ -35,13 +35,13 @@
 
   <!-- Compiled Tailwind. Lean static CSS, no CDN runtime.
        ?v query is a cache-buster. Bump on every CSS rebuild. -->
-  <link rel="stylesheet" href="/css/main.css?v=20260912j" />
+  <link rel="stylesheet" href="/css/main.css?v=20260912l" />
 
   <!-- GSAP for scroll animations. Async / defer to keep LCP clean. -->
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/MotionPathPlugin.min.js"></script>
-  <script defer src="/js/main.js?v=20260912j"></script>
+  <script defer src="/js/main.js?v=20260912l"></script>
 
   <!-- Plausible: privacy-friendly, cookieless, GDPR/DPDP compliant. -->
   <script defer data-domain="vintract.com" src="https://plausible.io/js/script.js"></script>
@@ -198,8 +198,8 @@
   <main id="main">
 
   <!-- ============ HERO ============ -->
-  <section id="top" class="relative min-h-[62svh] flex items-center pt-16 pb-12">
-    <div class="mx-auto max-w-screen-2xl px-8 lg:px-16 w-full text-center">
+  <section id="top" class="relative pt-14 pb-8">
+    <div class="mx-auto max-w-screen-2xl px-6 lg:px-10 w-full text-center">
       <div class="mx-auto max-w-5xl">
         <div class="hero-eyebrow inline-flex items-center gap-2 rounded-full border border-brand-600/20 bg-white/70 px-4 py-1.5 text-sm font-medium text-slate-700 mb-6 backdrop-blur">
           <span class="w-1.5 h-1.5 rounded-full bg-accent-500 animate-pulse"></span>
@@ -223,7 +223,7 @@
           </a>
         </div>
 
-        <div class="hero-stats mt-12 mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl">
+        <div class="hero-stats mt-10 mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl">
           <div>
             <div class="text-3xl md:text-4xl font-bold text-slate-900 tabular-nums" data-counter="100" data-counter-suffix="%">0</div>
             <div class="text-sm uppercase tracking-wider text-slate-500 mt-1">Real-time ledger</div>
@@ -246,9 +246,9 @@
   </section>
 
   <!-- ============ MISSION + VISION ============ -->
-  <section id="mission" class="relative py-32">
-    <div class="mx-auto max-w-screen-2xl px-8 lg:px-16">
-      <div class="grid md:grid-cols-2 gap-12 md:gap-20">
+  <section id="mission" class="relative py-20">
+    <div class="mx-auto max-w-screen-2xl px-6 lg:px-10">
+      <div class="grid md:grid-cols-2 gap-10 md:gap-14">
         <div class="reveal">
           <div class="text-xs uppercase tracking-[0.3em] text-brand-600 mb-4">Mission</div>
           <h2 class="text-3xl md:text-4xl font-bold leading-tight text-slate-900">
@@ -278,9 +278,9 @@
   </section>
 
   <!-- ============ PLATFORM ============ -->
-  <section id="platform" class="relative py-32 overflow-hidden">
+  <section id="platform" class="relative py-20 overflow-hidden">
     <div class="platform-bg" aria-hidden="true"></div>
-    <div class="mx-auto max-w-screen-2xl px-8 lg:px-16 relative">
+    <div class="mx-auto max-w-screen-2xl px-6 lg:px-10 relative">
       <div class="max-w-2xl mb-20 reveal">
         <div class="text-xs uppercase tracking-[0.3em] text-brand-600 mb-4">What We Build</div>
         <h2 class="text-4xl md:text-5xl font-bold leading-tight text-slate-900">
@@ -363,8 +363,8 @@
   </section>
 
   <!-- ============ WORK ============ -->
-  <section id="work" class="relative py-32">
-    <div class="mx-auto max-w-screen-2xl px-8 lg:px-16">
+  <section id="work" class="relative py-20">
+    <div class="mx-auto max-w-screen-2xl px-6 lg:px-10">
       <div class="max-w-2xl mb-16 reveal">
         <div class="text-xs uppercase tracking-[0.3em] text-brand-600 mb-4">Work</div>
         <h2 class="text-4xl md:text-5xl font-bold leading-tight text-slate-900">
@@ -420,8 +420,8 @@
   </section>
 
   <!-- ============ MOBILE APP ============ -->
-  <section id="mobile" class="relative py-32 bg-white/40 border-y border-slate-200">
-    <div class="mx-auto max-w-screen-2xl px-8 lg:px-16">
+  <section id="mobile" class="relative py-20 bg-white/40 border-y border-slate-200">
+    <div class="mx-auto max-w-screen-2xl px-6 lg:px-10">
       <div class="grid md:grid-cols-12 gap-12 items-center">
         <div class="md:col-span-7 reveal">
           <div class="text-xs uppercase tracking-[0.3em] text-brand-600 mb-4">Mobile</div>
@@ -533,8 +533,8 @@
   </section>
 
   <!-- ============ AI ============ -->
-  <section id="ai" class="relative py-32">
-    <div class="mx-auto max-w-screen-2xl px-8 lg:px-16">
+  <section id="ai" class="relative py-20">
+    <div class="mx-auto max-w-screen-2xl px-6 lg:px-10">
       <div class="grid md:grid-cols-12 gap-12 items-center">
         <div class="md:col-span-6 reveal">
           <div class="text-xs uppercase tracking-[0.3em] text-accent-500 mb-4">Roadmap</div>
@@ -584,8 +584,8 @@
   </section>
 
   <!-- ============ HOW WE DEPLOY ============ -->
-  <section id="how" class="relative py-24 border-y border-slate-200 bg-white/50">
-    <div class="mx-auto max-w-screen-2xl px-8 lg:px-16">
+  <section id="how" class="relative py-16 border-y border-slate-200 bg-white/50">
+    <div class="mx-auto max-w-screen-2xl px-6 lg:px-10">
       <div class="text-center mb-12 reveal">
         <div class="text-xs uppercase tracking-[0.3em] text-slate-500 mb-4">How we deploy</div>
         <h2 class="text-3xl md:text-4xl font-bold leading-tight text-slate-900">Weeks, not years.</h2>
@@ -620,8 +620,8 @@
   </section>
 
   <!-- ============ FAQ ============ -->
-  <section id="faq" class="relative py-24">
-    <div class="mx-auto max-w-screen-2xl px-8 lg:px-16">
+  <section id="faq" class="relative py-16">
+    <div class="mx-auto max-w-screen-2xl px-6 lg:px-10">
       <div class="max-w-2xl mb-12 reveal">
         <div class="text-xs uppercase tracking-[0.3em] text-brand-600 mb-4">FAQ</div>
         <h2 class="text-3xl md:text-4xl font-bold leading-tight text-slate-900">
@@ -659,8 +659,8 @@
   </section>
 
   <!-- ============ GET THE APPS ============ -->
-  <section id="apps" class="relative py-32 border-y border-slate-200 bg-white/50">
-    <div class="mx-auto max-w-screen-2xl px-8 lg:px-16">
+  <section id="apps" class="relative py-20 border-y border-slate-200 bg-white/50">
+    <div class="mx-auto max-w-screen-2xl px-6 lg:px-10">
       <div class="text-center mb-12 reveal">
         <div class="text-xs uppercase tracking-[0.3em] text-slate-500 mb-4">Get the apps</div>
         <h2 class="text-3xl md:text-4xl font-bold leading-tight text-slate-900">Three apps. One system.</h2>
@@ -727,7 +727,7 @@
   </section>
 
   <!-- ============ CONTACT ============ -->
-  <section id="contact" class="relative py-32">
+  <section id="contact" class="relative py-20">
     <div class="mx-auto max-w-4xl px-6">
       <div class="reveal text-center mb-12">
         <div class="text-xs uppercase tracking-[0.3em] text-brand-600 mb-4">Get in touch</div>
@@ -778,7 +778,7 @@
 
   <!-- ============ FOOTER ============ -->
   <footer class="relative border-t border-slate-200 bg-slate-100 pt-12 pb-8">
-    <div class="mx-auto max-w-screen-2xl px-8 lg:px-16">
+    <div class="mx-auto max-w-screen-2xl px-6 lg:px-10">
       <div class="grid md:grid-cols-4 gap-8 mb-10">
         <div class="md:col-span-2">
           <div class="flex items-center gap-2 mb-4">
