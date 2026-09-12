@@ -35,13 +35,13 @@
 
   <!-- Compiled Tailwind. Lean static CSS, no CDN runtime.
        ?v query is a cache-buster. Bump on every CSS rebuild. -->
-  <link rel="stylesheet" href="/css/main.css?v=20260912n" />
+  <link rel="stylesheet" href="/css/main.css?v=20260912o" />
 
   <!-- GSAP for scroll animations. Async / defer to keep LCP clean. -->
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/MotionPathPlugin.min.js"></script>
-  <script defer src="/js/main.js?v=20260912n"></script>
+  <script defer src="/js/main.js?v=20260912o"></script>
 
   <!-- Plausible: privacy-friendly, cookieless, GDPR/DPDP compliant. -->
   <script defer data-domain="vintract.com" src="https://plausible.io/js/script.js"></script>
@@ -116,7 +116,7 @@
           {
             "@type": "Question",
             "name": "How long does deployment take?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Weeks, not years. A focused workflow ships in about three weeks. A full ERP rollout, including IoT scanning stations, typically lands inside a quarter." }
+            "acceptedAnswer": { "@type": "Answer", "text": "Weeks, not years. A focused workflow ships in about three weeks. A full ERP rollout, including IoT scanning stations, typically lands in about six weeks." }
           }
         ]
       }
@@ -229,7 +229,7 @@
             <div class="text-sm uppercase tracking-wider text-slate-500 mt-1">Real-time ledger</div>
           </div>
           <div>
-            <div class="text-3xl md:text-4xl font-bold text-slate-900 tabular-nums" data-counter="14" data-counter-suffix=" wks">0</div>
+            <div class="text-3xl md:text-4xl font-bold text-slate-900 tabular-nums" data-counter="6" data-counter-suffix=" wks">0</div>
             <div class="text-sm uppercase tracking-wider text-slate-500 mt-1">Typical deploy</div>
           </div>
           <div>
@@ -510,16 +510,16 @@
         <div class="md:col-span-5 reveal">
           <div class="relative mx-auto max-w-xs">
             <div class="aspect-[9/19] rounded-[2.5rem] border border-slate-200 bg-gradient-to-br from-slate-900 to-slate-800 p-3 shadow-2xl shadow-brand-600/30">
-              <div class="h-full w-full rounded-[2rem] bg-gradient-to-br from-brand-600/30 via-slate-900 to-accent-500/20 flex flex-col items-center justify-center p-6">
-                <img src="/assets/vintract-mark-v3.png" alt="" class="w-14 h-14 rounded-2xl mb-4 shadow-lg shadow-brand-700/40" width="56" height="56" />
-                <div class="text-white font-black tracking-[0.3em] text-sm mb-6">VINTRACT</div>
+              <div class="h-full w-full rounded-[2rem] bg-gradient-to-br from-white via-slate-50 to-slate-100 flex flex-col items-center justify-center p-6">
+                <img src="/assets/vintract-mark-v3.png" alt="" class="w-14 h-14 rounded-2xl mb-4 shadow-lg shadow-brand-700/30" width="56" height="56" />
+                <div class="text-slate-900 font-black tracking-[0.3em] text-sm mb-6">VINTRACT</div>
                 <div class="w-full space-y-2">
-                  <div class="rounded-lg bg-white/5 border border-white/10 h-9"></div>
-                  <div class="rounded-lg bg-white/5 border border-white/10 h-9"></div>
-                  <div class="rounded-lg bg-white/5 border border-white/10 h-9"></div>
+                  <div class="rounded-lg bg-slate-100 border border-slate-200 h-9 flex items-center px-3 text-xs font-medium text-slate-500">Company Code</div>
+                  <div class="rounded-lg bg-slate-100 border border-slate-200 h-9 flex items-center px-3 text-xs font-medium text-slate-500">Username</div>
+                  <div class="rounded-lg bg-slate-100 border border-slate-200 h-9 flex items-center px-3 text-xs font-medium text-slate-500">Password</div>
                 </div>
                 <div class="mt-4 w-full rounded-lg bg-gradient-to-r from-brand-600 to-brand-500 h-10 flex items-center justify-center">
-                  <span class="text-white text-xs font-bold">Sign in</span>
+                  <span class="text-white text-xs font-bold">Sign In</span>
                 </div>
               </div>
             </div>
@@ -590,7 +590,7 @@
         <div class="text-xs uppercase tracking-[0.3em] text-slate-500 mb-4">How we deploy</div>
         <h2 class="text-3xl md:text-4xl font-bold leading-tight text-slate-900">Weeks, not years.</h2>
         <p class="mt-4 text-slate-600 max-w-2xl mx-auto">
-          A scoped, fixed-fee rollout. From kickoff to first scan in 8–14 weeks for a single-site factory.
+          A scoped, fixed-fee rollout. From kickoff to first scan in about 6 weeks for a single-site factory.
         </p>
       </div>
 
@@ -651,7 +651,7 @@
           <p class="card__body mt-3">
             Weeks, not years. A focused workflow ships in about three weeks. A full
             ERP rollout, including IoT scanning stations on the floor, typically lands
-            inside a quarter.
+            in about six weeks.
           </p>
         </div>
       </div>
@@ -736,7 +736,7 @@
         </h2>
         <p class="mt-6 text-slate-600 text-lg max-w-2xl mx-auto">
           30-minute walkthrough of live systems, then a scoping call for your floor.
-          Typical deployment is 8–14 weeks from kickoff to first scan.
+          Typical deployment is about 6 weeks from kickoff to first scan.
         </p>
       </div>
 
