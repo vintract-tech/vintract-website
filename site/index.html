@@ -41,7 +41,7 @@
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/MotionPathPlugin.min.js"></script>
-  <script defer src="/js/main.js?v=20260912z"></script>
+  <script defer src="/js/main.js?v=20260913a"></script>
 
   <!-- Plausible: privacy-friendly, cookieless, GDPR/DPDP compliant. -->
   <script defer data-domain="vintract.com" src="https://plausible.io/js/script.js"></script>
@@ -140,8 +140,7 @@
     <!-- Value trend line: draws itself upward as the visitor scrolls the
          page, red tip riding the end. White stroke so it stays a whisper
          against the aurora. -->
-    <!-- Path geometry is built by JS from the real viewport so the tip
-         always stops at the header's border, under the Book a demo button. -->
+    <!-- Path geometry is built by JS from the real viewport. -->
     <svg class="bg-trend">
       <defs>
         <linearGradient id="trendGrad" x1="0%" y1="100%" x2="100%" y2="0%">
@@ -152,7 +151,6 @@
       </defs>
       <path id="bg-trend-line" class="bg-trend__line" fill="none" d="" />
       <polygon id="bg-trend-tip" class="bg-trend__tip" points="0,-9 18,0 0,9" />
-      <polygon id="bg-trend-tip-intro" class="bg-trend__tip" points="0,-9 18,0 0,9" />
     </svg>
   </div>
 
